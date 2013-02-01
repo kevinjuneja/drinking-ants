@@ -18,14 +18,21 @@
             var pull        = $('#pull');
                 menu        = $('nav ul');
                 menuHeight  = menu.height();
+                w           = $(window).width();
 
             $(pull).on('click', function(e) {
                 e.preventDefault();
                 menu.slideToggle();
             });
 
+            $(".menulink").on('click', function(e) {
+                if (w < 481) {
+                    menu.slideToggle();
+                }
+            });
+
             $(window).resize(function(){
-                var w = $(window).width();
+                w = $(window).width();
                 if(w > 320 && menu.is(':hidden')) {
                     menu.removeAttr('style');
                 }
@@ -37,11 +44,11 @@
 <body id="top">
 <nav id="navigation" class="clearfix">  
     <ul id ="navmenu" class="clearfix">  
-        <li><a href="#first" tabindex="1">First Div</a></li>
-        <li><a href="#second" tabindex="2">Second Div</a></li>
-        <li><a href="#third" tabindex="3">Third Div</a></li>
-        <li><a href="#fourth" tabindex="4">Fourth Div</a></li>
-        <li><a href="#top" tabindex="7">Top</a></li> 
+        <li><a class="menulink" href="#first" tabindex="1">First Div</a></li>
+        <li><a class="menulink" href="#second" tabindex="2">Second Div</a></li>
+        <li><a class="menulink" href="#third" tabindex="3">Third Div</a></li>
+        <li><a class="menulink" href="#fourth" tabindex="4">Fourth Div</a></li>
+        <li><a class="menulink" href="#top" tabindex="5">Top</a></li> 
     </ul>  
     <a href="#" id="pull">Menu</a>  
 </nav>
