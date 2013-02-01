@@ -1,0 +1,20 @@
+body {
+	width: 650px;
+	margin: 0 auto;
+}
+div {
+	border: 1px solid black;
+	margin-bottom: 10px;
+	display: block;
+}
+#wrapper{
+	border:none;
+}
+header {
+	text-align:center;
+}
+nav {
+	position: fixed;
+ 	left: 0;
+ 	top: 40%;
+}
