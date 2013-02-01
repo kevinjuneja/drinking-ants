@@ -7,7 +7,6 @@ div {
 	display: block;
 }
 #wrapper{
-    padding-top:15px;
 	border:none;
 }
 #content {
@@ -25,7 +24,7 @@ nav {
     font-size: 11pt;  
     font-family: 'PT Sans', Arial, sans-serif;  
     font-weight: bold;  
-    position: fixed;  
+    /*position: fixed;  */
     border-bottom: 2px solid #283744;  
 }  
 nav ul {  

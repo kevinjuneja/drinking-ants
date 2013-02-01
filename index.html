@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <script src="js/jquery.smooth-scroll.js"></script>
+    <script src="js/jquery-scrolltofixed.js" type="text/javascript"></script>
     <script>
         $(document).ready(function() {
             $('ul#navmenu a').smoothScroll();
+            $('#navigation').scrollToFixed();
         });
 
         $(function() {
@@ -42,21 +44,21 @@
 </head>
 
 <body id="top">
+<header>
+    <h1>This is a header.</h1>
+</header>
 <nav id="navigation" class="clearfix">  
     <ul id ="navmenu" class="clearfix">  
         <li><a class="menulink" href="#first" tabindex="1">First Div</a></li>
         <li><a class="menulink" href="#second" tabindex="2">Second Div</a></li>
         <li><a class="menulink" href="#third" tabindex="3">Third Div</a></li>
         <li><a class="menulink" href="#fourth" tabindex="4">Fourth Div</a></li>
-        <li><a class="menulink" href="#top" tabindex="5">Top</a></li> 
+        <li><a class="menulink" href="#top" tabindex="7">Top</a></li> 
     </ul>  
     <a href="#" id="pull">Menu</a>  
 </nav>
 <div id="wrapper">
     <div id="content">  
-        <header>
-            <h1>This is a header.</h1>
-        </header>
         <div id="first" class="">
             <p>
                 First div.
