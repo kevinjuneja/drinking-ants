@@ -20,38 +20,57 @@ h3 {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 div#front-page {
-    background: url(../../img/bg.jpg) no-repeat center center fixed #324a6f;
+    background: url(../../img/anthillpub-frontpage-bg.jpg) no-repeat center center fixed #000000;
     -webkit-background-size: cover; 
     -moz-background-size: cover; 
     -o-background-size: cover;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/bg.jpg', sizingMethod='scale');
-    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/bg.jpg', sizingMethod='scale')";
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-frontpage-bg.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-frontpage-bg.jpg', sizingMethod='scale')";
     background-size: cover;
     position: relative;
 }
-div#front-page, div#god, div#bless, div#america {
+div#front-page, div#about-us, div#beer, div#menu, div#events, div#find-us {
     height: auto !important;
     height: 100%;
     min-height: 100%;
 }
-div#god {
+div#about-us {
     color: #F5F5F5;
-    background-color: #E0162B;
+    background-color: #272822;
+/*    background: url(../../img/anthillpub-aboutus-bg.jpg) no-repeat center center fixed #324a6f;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-aboutus-bg.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-aboutus-bg.jpg', sizingMethod='scale')";
+    background-size: cover;*/
 }
-div#bless {
-    background-color: #F5F5F5;
+div#beer {
+    background-color: #001652;
 }
-div#america {
+div#menu {
     color: #F5F5F5;
-    background-color: #0052A5;
+    background: url(../../img/anthillpub-menu-bg.png) center center #324a6f;
 }
-.pub-nav li {
+div#events {
+    color: #F5F5F5;
+    background-color: #461312;
+}
+div#find-us {
+    color: #F5F5F5;
+    background: url(../../img/anthillpub-findus-bg.jpg) no-repeat center center fixed #324a6f;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-findus-bg.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-findus-bg.jpg', sizingMethod='scale')";
+    background-size: cover;
+}
+.nav-right li {
     display:inline;
-    font-family: "Times New Roman";
-    font-style: italic;
     font-size: 24px;
 }
-.pub-nav li a {
+.nav-right li a {
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     -webkit-border-radius: 1000px;
@@ -60,17 +79,27 @@ div#america {
     -o-border-radius: 1000px;
     border-radius: 1000px;
 }
-.pub-nav li a:hover {
+.nav-right li a:hover {
     color: yellow;
 }
-.nav-menu {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-right: 50px;
-    z-index: 99;
+#nav-logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    display: none;
 }
-.active a {
+#nav-menu {
+    width:100%;
+    z-index: 99;
+    background: #ffffff;
+}
+.nav-right { 
+    float:right;
+    right: 0px;
+    z-index:90;
+}
+#nav-right .active a {
     background: #000;
     padding: 3px 9px;
 }
@@ -83,7 +112,9 @@ div#america {
     display: block;
     max-width: 100%;
     margin: 0 auto;
-    padding: 20% 0 0;
+    padding: 15% 0 0;
+    opacity:0.85;
+    filter:alpha(opacity=85); /* For IE8 and earlier */
 }
 .tabs {
     border-bottom: solid 1px #4D0000;
