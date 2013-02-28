@@ -31,7 +31,7 @@
         </div>
     </div>
     <div id="nav-menu" class="hide-for-small">
-        <ul class="nav-right" data-magellan-expedition="fixed">
+        <ul class="nav-right" id="nav-right" data-magellan-expedition="fixed">
             <li data-magellan-arrival="about-us"><a href="#about-us">&nbsp;About Us&nbsp;</a></li>
             <li data-magellan-arrival="beer"><a href="#beer">&nbsp;Beer&nbsp;</a></li>
             <li data-magellan-arrival="menu"><a href="#menu">&nbsp;Menu&nbsp;</a></li>
@@ -46,7 +46,10 @@
         <div class="six columns">
             <h3>About Us</h3>
             <p>
-                
+                We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. 
+            </p>
+            <p>
+                We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. 
             </p>
         </div>
         <div class="six columns">
@@ -114,25 +117,28 @@
 <script src="foundation/javascripts/app.js"></script>
 
 <script src="js/jquery.smooth-scroll.js"></script>
+<script src="js/jquery.animate-colors-min.js"></script>
 <!-- <script src="js/jquery.touchwipe.min.js"></script> -->
+
 <script>
     $(document).ready(function() {
-        $('ul.pub-nav a').smoothScroll();
+        $('ul.nav-right a').smoothScroll();
+        $('#nav-logo a').smoothScroll();
     
         var topOfOthDiv = $("#about-us").offset().top;
         $(window).scroll(function() {
             if($(window).scrollTop() > topOfOthDiv) { //scrolled past the other div?
-                $("#nav-logo").fadeIn("fast"); //reached the desired point -- show div
+                $("#nav-logo").fadeIn(150); //reached the desired point -- show div
+                $('#nav-right').animate({backgroundColor: '#000000'})
+                $('#nav-right').css("margin-top","2%");
             } else {
-                $("#nav-logo").fadeOut("fast"); // hide when we scroll back up
+                $("#nav-logo").fadeOut(150); // hide when we scroll back up
+                $('#nav-right').css("margin-top","0");
             }
         });
     });
 
 
-$(document).ready( function() {
-    
-});
     $(window).load(function() {
         $('#press-slider').orbit({ 
             advanceSpeed: 5000, 

@@ -58,13 +58,14 @@ div#events {
 }
 div#find-us {
     color: #F5F5F5;
-    background: url(../../img/anthillpub-findus-bg.jpg) no-repeat center center fixed #324a6f;
+    background-color: #272822;
+   /* background: url(../../img/anthillpub-findus-bg.jpg) no-repeat center center fixed #324a6f;
     -webkit-background-size: cover; 
     -moz-background-size: cover; 
     -o-background-size: cover;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-findus-bg.jpg', sizingMethod='scale');
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-findus-bg.jpg', sizingMethod='scale')";
-    background-size: cover;
+    background-size: cover;*/
 }
 .nav-right li {
     display:inline;
@@ -73,35 +74,31 @@ div#find-us {
 .nav-right li a {
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    -webkit-border-radius: 1000px;
-    -moz-border-radius: 1000px;
-    -ms-border-radius: 1000px;
-    -o-border-radius: 1000px;
-    border-radius: 1000px;
-}
-.nav-right li a:hover {
-    color: yellow;
 }
 #nav-logo {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 90;
+    z-index: 91;
     display: none;
 }
 #nav-menu {
-    width:100%;
-    z-index: 99;
-    background: #ffffff;
-}
-.nav-right { 
+    width: 100%;
     float:right;
-    right: 0px;
+    margin-top: 10px;
+    background-color: white;
+    z-index: 90;
+}
+.nav-right {
+    width: 100%;
+    /*margin-top: 2%;*/
     z-index:90;
 }
+.nav-right li {
+    float:right;
+    padding: .5%;
+}
 #nav-right .active a {
-    background: #000;
-    padding: 3px 9px;
 }
 .front-page-header {
     text-align: center;
@@ -146,7 +143,7 @@ div#find-us {
 .tabs dd a, .tabs li a {
     color: black;
 }
-#eagles {
+#press-slider {
     margin:40px 0px;
 }
 /*.orbit-wrapper .slider-nav span { 

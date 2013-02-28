@@ -57,7 +57,7 @@
     wrapperHTML: '<div class="orbit-wrapper" />',
     timerHTML: '<div class="timer"><span class="mask"><span class="rotator"></span></span><span class="pause"></span></div>',
     captionHTML: '<div class="orbit-caption"></div>',
-    directionalNavHTML: '<div class="slider-nav hide-for-small"><span class="right"></span><span class="left"></span></div>',
+    directionalNavHTML: '<div class="slider-nav"><span class="right"></span><span class="left"></span></div>',
     bulletHTML: '<ul class="orbit-bullets"></ul>',
     slideNumberHTML: '<span class="orbit-slide-counter"></span>',
 
