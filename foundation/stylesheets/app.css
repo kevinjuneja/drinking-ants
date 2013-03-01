@@ -18,6 +18,7 @@ body, html {
 h3 {
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin-top: 10%;
 }
 div#front-page {
     background: url(../../img/anthillpub-frontpage-bg.jpg) no-repeat center center fixed #000000;
@@ -45,6 +46,12 @@ div#about-us {
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-aboutus-bg.jpg', sizingMethod='scale')";
     background-size: cover;*/
 }
+#about-us-row {
+    padding: 10% 0 0; 
+}
+div#about-us-row h3 {
+    text-align:center;
+}
 div#beer {
     background-color: #001652;
 }
@@ -67,14 +74,6 @@ div#find-us {
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-findus-bg.jpg', sizingMethod='scale')";
     background-size: cover;*/
 }
-.nav-right li {
-    display:inline;
-    font-size: 24px;
-}
-.nav-right li a {
-    color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
 #nav-logo {
     position: fixed;
     top: 0;
@@ -84,8 +83,9 @@ div#find-us {
 }
 #nav-menu {
     width: 100%;
-    float:right;
-    margin-top: 10px;
+    float: right;
+    /*margin-top: 2%;*/
+    border-top: solid 8px #b4b0b0;
     background-color: white;
     z-index: 90;
 }
@@ -96,7 +96,14 @@ div#find-us {
 }
 .nav-right li {
     float:right;
-    padding: .5%;
+    padding: 0 .5%;
+    display:inline;
+    font-size: 18px;
+    font-family: 'Exo', sans-serif;
+    font-weight: 600;
+}
+.nav-right li a {
+    color: #b4b0b0;
 }
 #nav-right .active a {
 }
