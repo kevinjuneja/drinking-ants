@@ -32,16 +32,16 @@
         </div>
     </div>
     <div id="nav-menu" class="hide-for-small">
-        <ul class="nav-right" id="nav-right" data-magellan-expedition="fixed">
-            <li data-magellan-arrival="find-us"><a href="#find-us">FIND US</a></li>
+        <ul class="nav-right" data-magellan-expedition="fixed">
+            <li data-magellan-arrival="find-us" class="li-center"><a href="#find-us">FIND US</a></li>
             <li><img src="img/anthillpub-navdivider-white.png" class="nav-divider" /></li>
-            <li data-magellan-arrival="events"><a href="#events">EVENTS</a></li>
+            <li data-magellan-arrival="events" class="li-center"><a href="#events">EVENTS</a></li>
             <li><img src="img/anthillpub-navdivider-white.png" class="nav-divider" /></li>
-            <li data-magellan-arrival="menu"><a href="#menu">MENU</a></li>
+            <li data-magellan-arrival="menu" class="li-center"><a href="#menu">MENU</a></li>
             <li><img src="img/anthillpub-navdivider-white.png" class="nav-divider" /></li>
-            <li data-magellan-arrival="beer"><a href="#beer">BEER</a></li>
+            <li data-magellan-arrival="beer" class="li-center"><a href="#beer">BEER</a></li>
             <li><img src="img/anthillpub-navdivider-white.png" class="nav-divider" /></li>
-            <li data-magellan-arrival="about-us"><a href="#about-us">ABOUT US</a></li>
+            <li data-magellan-arrival="about-us" class="li-center"><a href="#about-us">ABOUT US</a></li>
         </ul>
     </div>    
 </div>
@@ -130,17 +130,23 @@
         $('ul.nav-right a').smoothScroll();
         $('#nav-logo a').smoothScroll();
     
-        var topOfOthDiv = $("#about-us").offset().top - 87;
+        var topOfOthDiv = $("#about-us").offset().top - 79;
         $(window).scroll(function() {
             if($(window).scrollTop() > topOfOthDiv) { //scrolled past the other div?
                 $("#nav-logo").fadeIn(150); //reached the desired point -- show div
-                $('#nav-right').animate({backgroundColor: '#000000'}, 150);
-                $('#nav-right').css("margin-top","1.25%");
+                $('.nav-right').animate({backgroundColor: '#000000'}, 150);
+                $('.nav-right').css("margin-top",".85%");
                 $('.nav-divider').attr("src", "img/anthillpub-navdivider-black.png");
+                $('.nav-right').css("border-bottom","solid 8px #b4b0b0");
+                $('.nav-right li a').css("color","#FFFFFF");
+                $('#nav-menu').css("border-top","0");
             } else {
                 $("#nav-logo").fadeOut(150); // hide when we scroll back up
-                $('#nav-right').css("margin-top","0");
+                $('.nav-right').css("margin-top","0");
                 $('.nav-divider').attr("src", "img/anthillpub-navdivider-white.png");
+                $('.nav-right').css("border-bottom","0");
+                $('#nav-menu').css("border-top","solid 8px #b4b0b0");
+                $('.nav-right li a').css("color","#b4b0b0");
             }
         });
     });

@@ -84,14 +84,14 @@ div#find-us {
 #nav-menu {
     width: 100%;
     float: right;
-    /*margin-top: 2%;*/
+    margin-top: 1.9%;
     border-top: solid 8px #b4b0b0;
     background-color: white;
     z-index: 90;
 }
 .nav-right {
     width: 100%;
-    /*margin-top: 2%;*/
+    padding-right: 1.5%;
     z-index:90;
 }
 .nav-right li {
@@ -101,11 +101,15 @@ div#find-us {
     font-size: 18px;
     font-family: 'Exo', sans-serif;
     font-weight: 600;
+    height: 51px;
+}
+.nav-right li.li-center {
+    padding: .75% 0;
 }
 .nav-right li a {
     color: #b4b0b0;
 }
-#nav-right .active a {
+.nav-right .active {
 }
 .front-page-header {
     text-align: center;
