@@ -1,83 +1,53 @@
-/* Artfully masterminded by ZURB  */
+/* Wizardry performed by Kevin Juneja  */
 
 /* -------------------------------------------------- 
    Table of Contents
 -----------------------------------------------------
-:: Shared Styles
-:: Page Name 1
-:: Page Name 2
+:: General
+:: Navigation
+:: Front Page
+:: About Us
+:: Beer
+:: Menu
+:: Events
+:: Find Us
 */
 
 
 /* -----------------------------------------
-   Shared Styles
+   General
 ----------------------------------------- */
 body, html {
     height: 100%;
+    font-family: Verdana, sans-serif;
+    color: white;
 }
 h3 {
+    font-family: 'Exo';
     color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-weight: 900;
     margin-top: 10%;
 }
-div#front-page {
-    background: url(../../img/anthillpub-frontpage-bg.jpg) no-repeat center center fixed #000000;
-    -webkit-background-size: cover; 
-    -moz-background-size: cover; 
-    -o-background-size: cover;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-frontpage-bg.jpg', sizingMethod='scale');
-    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-frontpage-bg.jpg', sizingMethod='scale')";
-    background-size: cover;
-    position: relative;
+a, a:active, a:visited {
+    color: #D80000;
+}
+a:hover {
+    color: #8F0505;
 }
 div#front-page, div#about-us, div#beer, div#menu, div#events, div#find-us {
     height: auto !important;
     height: 100%;
     min-height: 100%;
 }
-div#about-us {
-    color: #F5F5F5;
-    background-color: #272822;
-/*    background: url(../../img/anthillpub-aboutus-bg.jpg) no-repeat center center fixed #324a6f;
-    -webkit-background-size: cover; 
-    -moz-background-size: cover; 
-    -o-background-size: cover;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-aboutus-bg.jpg', sizingMethod='scale');
-    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-aboutus-bg.jpg', sizingMethod='scale')";
-    background-size: cover;*/
-}
-#about-us-row {
-    padding: 10% 0 0; 
-}
-div#about-us-row h3 {
-    text-align:center;
-}
-div#beer {
-    background-color: #001652;
-}
-div#menu {
-    color: #F5F5F5;
-    background: url(../../img/anthillpub-menu-bg.png) center center #324a6f;
-}
-div#events {
-    color: #F5F5F5;
-    background-color: #461312;
-}
-div#find-us {
-    color: #F5F5F5;
-    background-color: #272822;
-   /* background: url(../../img/anthillpub-findus-bg.jpg) no-repeat center center fixed #324a6f;
-    -webkit-background-size: cover; 
-    -moz-background-size: cover; 
-    -o-background-size: cover;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-findus-bg.jpg', sizingMethod='scale');
-    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-findus-bg.jpg', sizingMethod='scale')";
-    background-size: cover;*/
-}
+
+
+/* -----------------------------------------
+   Navigation
+----------------------------------------- */
 #nav-logo {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 10px;
     z-index: 91;
     display: none;
 }
@@ -100,7 +70,7 @@ div#find-us {
     display:inline;
     font-size: 18px;
     font-family: 'Exo', sans-serif;
-    font-weight: 600;
+    font-weight: 800;
     height: 51px;
 }
 .nav-right li.li-center {
@@ -111,10 +81,20 @@ div#find-us {
 }
 .nav-right .active {
 }
-.front-page-header {
-    text-align: center;
-    color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+
+/* -----------------------------------------
+   Front Page
+----------------------------------------- */
+div#front-page {
+    background: url(../../img/anthillpub-frontpage-bg.jpg) no-repeat center center fixed #000000;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-frontpage-bg.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-frontpage-bg.jpg', sizingMethod='scale')";
+    background-size: cover;
+    position: relative;
 }
 #logo {
     display: block;
@@ -124,66 +104,147 @@ div#find-us {
     opacity:0.85;
     filter:alpha(opacity=85); /* For IE8 and earlier */
 }
-.tabs {
-    border-bottom: solid 1px #4D0000;
+div#front-page-details {
+    width: 100%;
+    position: absolute;
+    top: 0;
 }
-.tabs dd:first-child, .tabs li:first-child {
-    border-right: solid 1px #E6E6E6;
+div#front-page-details p {
+    font-size: 12px;
 }
-.tabs dd:last-child, .tabs li:last-child {
-    border-left: solid 1px #E6E6E6;
+p#address {
+    float: left;
+    clear: left;
+    padding: .5%;
 }
-/*.tabs dd, .tabs li {
-    background:#4d4d4d;
-}*/
-.tabs dd.active, .tabs li.active {
-    border-top: 3px solid #4D0000;
-    margin-top: -3px;
-    border-left: 0px;
-    border-right: 0px;
+p#hours {
+    float: right;
+    clear: right;
+    padding: .5%;
 }
-.tabs-container {
-    background-color: #f5f5f5;
-    border: 1px solid black;
-    margin-bottom: 40px;
+.front-page-header {
+    float:right;
+    color: #ACACAC;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
-.tabs-container p {
-    padding: 5px;
-    color: #4D0000;
+
+
+/* -----------------------------------------
+   About Us
+----------------------------------------- */
+div#about-us {
+    color: #F5F5F5;
+    background-color: #272822;
+/*    background: url(../../img/anthillpub-aboutus-bg.jpg) no-repeat center center fixed #324a6f;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-aboutus-bg.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-aboutus-bg.jpg', sizingMethod='scale')";
+    background-size: cover;*/
 }
-.tabs dd a, .tabs li a {
-    color: black;
+#about-us-row {
+    padding: 10% 0 0; 
+}
+div#about-us-row h3 {
+    text-align:center;
 }
 #press-slider {
     margin:40px 0px;
 }
-/*.orbit-wrapper .slider-nav span { 
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); 
-    opacity: 0; 
-    -webkit-transition: opacity 400ms; 
-    -moz-transition: opacity 400ms; 
-    -o-transition: opacity 400ms; 
-    transition: opacity 400ms; 
+div.press-slide {
+    height: 100%;
+    padding: 0px 39px;
+    background: #CCCCCC;
 }
-.orbit-wrapper:hover .slider-nav span { 
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); 
-    opacity: 1; 
-}*/
-#contact-label {
+#press-slider h3 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+#press-slider h4 {
+    text-align: center;
+    margin-top: 0px;
+    color: white;
+    font-size: 16px;
+}
+.inner-slide-div {
+    height: 65%;
+    background: #ffffff;
+}
+.inner-slide-div p {
+    color: black;
+    padding: 3%;
+}
+.button-container {
+    margin-left: 15%;
+}
+.inner-slide-div a {
     color: white;
 }
-#flagModal p {
-    color: black;
+
+
+/* -----------------------------------------
+   Beer
+----------------------------------------- */
+div#beer {
+    background-color: #000033;
 }
-/* -----------------------------------------
-   Page Name 1
------------------------------------------ */
-
-
 
 
 /* -----------------------------------------
-   Page Name 2
+   Menu
 ----------------------------------------- */
+div#menu {
+    color: #F5F5F5;
+    background: url(../../img/anthillpub-menu-bg.png) center center #324a6f;
+}
 
 
+/* -----------------------------------------
+   Events
+----------------------------------------- */
+div#events {
+    color: #F5F5F5;
+    background-color: #461312;
+}
+
+
+/* -----------------------------------------
+   Find Us
+----------------------------------------- */
+div#find-us {
+    color: #F5F5F5;
+    background-color: #272822;
+   /* background: url(../../img/anthillpub-findus-bg.jpg) no-repeat center center fixed #324a6f;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-findus-bg.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-findus-bg.jpg', sizingMethod='scale')";
+    background-size: cover;*/
+}
+#find-us-row {
+    padding: 4% 0 0; 
+}
+#map {
+    padding-top: 4.5%;
+}
+div#find-us-row h3 {
+    text-align:center;
+}
+#contact-info p {
+    text-align:center;
+    font-size: 12px;
+}
+p.bullet {
+    margin-bottom: 5px;
+}
+p.address {
+    margin-bottom: 5px;
+}
+.facebook-icon {
+    padding-right: 10px;
+}
+.twitter-icon {
+    padding-left: 10px;
+}
