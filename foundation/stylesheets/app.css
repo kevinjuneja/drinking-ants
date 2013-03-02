@@ -79,8 +79,6 @@ div#front-page, div#about-us, div#beer, div#menu, div#events, div#find-us {
 .nav-right li a {
     color: #b4b0b0;
 }
-.nav-right .active {
-}
 
 
 /* -----------------------------------------
@@ -197,6 +195,7 @@ div#beer {
 div#menu {
     color: #F5F5F5;
     background: url(../../img/anthillpub-menu-bg.png) center center #324a6f;
+    background-size: contain;
 }
 
 
@@ -205,7 +204,11 @@ div#menu {
 ----------------------------------------- */
 div#events {
     color: #F5F5F5;
-    background-color: #461312;
+    background: url(../../img/anthillpub-events-sidephotos.jpg) no-repeat 10% 75px #461312;
+    background-size: 25% 100%;
+}
+#events-row {
+    padding: 7% 0 75px; 
 }
 
 
@@ -228,6 +231,7 @@ div#find-us {
 }
 #map {
     padding-top: 4.5%;
+    text-align:center;
 }
 div#find-us-row h3 {
     text-align:center;
@@ -236,15 +240,21 @@ div#find-us-row h3 {
     text-align:center;
     font-size: 12px;
 }
-p.bullet {
+.bullet, .address, .happy-hour, .social-divider {
     margin-bottom: 5px;
 }
-p.address {
-    margin-bottom: 5px;
+.social-label {
+    font-size:10px;
 }
 .facebook-icon {
     padding-right: 10px;
 }
 .twitter-icon {
     padding-left: 10px;
+}
+span.days {
+    font-weight: bold;
+}
+span.happy-hour-label {
+    font-style: italic;
 }
