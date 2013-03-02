@@ -133,7 +133,9 @@
         var topOfOthDiv = $("#about-us").offset().top - 79;
         $(window).scroll(function() {
             if($(window).scrollTop() > topOfOthDiv) { //scrolled past the other div?
-                $("#nav-logo").fadeIn(150); //reached the desired point -- show div
+                if ($(window).width() > 767) {
+                    $("#nav-logo").fadeIn(150); //reached the desired point -- show div
+                }
                 $('.nav-right').animate({backgroundColor: '#000000'}, 150);
                 $('.nav-right').css("margin-top",".85%");
                 $('.nav-divider').attr("src", "img/anthillpub-navdivider-black.png");
@@ -141,7 +143,9 @@
                 $('.nav-right li a').css("color","#FFFFFF");
                 $('#nav-menu').css("border-top","0");
             } else {
-                $("#nav-logo").fadeOut(150); // hide when we scroll back up
+                if ($(window).width() > 767) {
+                    $("#nav-logo").fadeOut(150); // hide when we scroll back up
+                }
                 $('.nav-right').css("margin-top","0");
                 $('.nav-divider').attr("src", "img/anthillpub-navdivider-white.png");
                 $('.nav-right').css("border-bottom","0");
