@@ -29,7 +29,7 @@
 		}
 		
 		function getRow() {
-			if (!isset($this->result )){
+			if (isset($this->result )){
 				return mysqli_fetch_row($this->result);
 			}
 		}

@@ -12,7 +12,7 @@
 		}
 		
 		function getTaps() {
-			$query = "SELCT a.alc_id, a.name, a.maker, a.alcohol_content FROM alcohol a WHERE type_code = 1";
+			$query = "SELECT a.alc_id, a.name, a.maker, a.alcohol_content FROM alcohol a WHERE type_code = 1";
 			
 			$this->queryRunner->queryRunner($query);
 		}
@@ -24,11 +24,14 @@
 			$count = 0;
 			$columnCount = 1;
 
+			//echo "Are you getting here.";
+
 			while ($row = $this->queryRunner->getRow()) {
 					
-					$beername = $row[0];
-					$brewery = $row[1];
-					$alcoholcont = $row[2];
+					$beername = $row[1];
+					$brewery = $row[2];
+					$alcoholcont = $row[3];
+
 				//do something...
 				//print something in html format
 
@@ -38,17 +41,24 @@
 					$columnCount++;
 				}
 				
-				echo "<li>" . $beername . " " . $brewery . ", " . $alcoholcont . "%</li>";
-
+				if (!is_null($alcoholcont)) {
+					$alcoholcont = $alcoholcont . "%";
+					echo "<li>" . $beername . " " . $brewery . ", " . $alcoholcont . "</li>";
+				}
+				else {
+					echo "<li>" . $beername . " " . $brewery . "</li>";
+				}
+				
 				$count++;
 
-				if ($count == 9) {
+				if ($count == 10) {
 					echo "</ul>";
 					echo "</div>";
 
 					$count = 0;
 				}
 			}
+			$this->queryRunner->disconnect();
 		}
 		
     };

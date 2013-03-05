@@ -1,6 +1,5 @@
 <?php
-    include_once 'tap_printer.php';
-
+    include_once 'cus/tap_printer.php';
 ?>
 <!DOCTYPE html>
 
@@ -126,7 +125,12 @@
                     </div>
                     <div class="content">
                         <div class="row">
-                            <div class="four columns">
+                            <?php
+                                $tap_printer = new tap_printer();
+                                $tap_printer->getTaps();
+                                $tap_printer->printTaps();
+                            ?>
+                            <!--<div class="four columns">
                                 <ul id="beer-column1">
                                     <li>Beer 1</li>
                                     <li>Beer 2</li>
@@ -167,7 +171,7 @@
                                     <li>Beer 29</li>
                                     <li>Beer 30</li>
                                 </ul>    
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </li>
