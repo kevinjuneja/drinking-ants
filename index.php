@@ -175,7 +175,13 @@
                     </div>
                     <div class="content">
                         <div class="row">
-                            <div class="six columns">
+                           <?php
+                                $bottledBeer = new bottle_printer();
+                                $bottledBeer->getBottles(3);
+
+                                $bottledBeer->printBottlesForFront();
+                            ?>
+                            <!--<div class="six columns">
                                 <ul id="wine-column1">
                                     <li>Wine 1</li>
                                     <li>Wine 2</li>
@@ -192,7 +198,7 @@
                                     <li>Wine 9</li>
                                     <li>Wine 10</li>
                                 </ul>    
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </li>
