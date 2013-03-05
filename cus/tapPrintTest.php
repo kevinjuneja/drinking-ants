@@ -4,8 +4,10 @@
 
 	 $tap_printer = new tap_printer();
      $tap_printer->getTaps();
-     $tap_printer->printTaps();
+     $tap_printer->printTapsForFront();
 
 
-     echo "test";
+     echo 13 % 2;
+
+     //echo (int)(11 / 2);
 ?>

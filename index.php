@@ -1,5 +1,6 @@
 <?php
     include_once 'cus/tap_printer.php';
+    include_once 'cus/bottle_printer.php';
 ?>
 <!DOCTYPE html>
 
@@ -128,50 +129,9 @@
                             <?php
                                 $tap_printer = new tap_printer();
                                 $tap_printer->getTaps();
-                                $tap_printer->printTaps();
+                                $tap_printer->printTapsForFront();
                             ?>
-                            <!--<div class="four columns">
-                                <ul id="beer-column1">
-                                    <li>Beer 1</li>
-                                    <li>Beer 2</li>
-                                    <li>Beer 3</li>
-                                    <li>Beer 4</li>
-                                    <li>Beer 5</li>
-                                    <li>Beer 6</li>
-                                    <li>Beer 7</li>
-                                    <li>Beer 8</li>
-                                    <li>Beer 9</li>
-                                    <li>Beer 10</li>
-                                </ul>    
-                            </div>
-                            <div class="four columns">
-                                <ul id="beer-column2">
-                                    <li>Beer 11</li>
-                                    <li>Beer 12</li>
-                                    <li>Beer 13</li>
-                                    <li>Beer 14</li>
-                                    <li>Beer 15</li>
-                                    <li>Beer 16</li>
-                                    <li>Beer 17</li>
-                                    <li>Beer 18</li>
-                                    <li>Beer 19</li>
-                                    <li>Beer 20</li>
-                                </ul>    
-                            </div>
-                            <div class="four columns">
-                                <ul id="beer-column3">
-                                    <li>Beer 21</li>
-                                    <li>Beer 22</li>
-                                    <li>Beer 23</li>
-                                    <li>Beer 24</li>
-                                    <li>Beer 25</li>
-                                    <li>Beer 26</li>
-                                    <li>Beer 27</li>
-                                    <li>Beer 28</li>
-                                    <li>Beer 29</li>
-                                    <li>Beer 30</li>
-                                </ul>    
-                            </div>-->
+                            
                         </div>
                     </div>
                 </li>
@@ -181,7 +141,14 @@
                     </div>
                     <div class="content">
                         <div class="row">
-                            <div class="six columns">
+                            <?php
+                                $bottledBeer = new bottle_printer();
+                                $bottledBeer->getBottles(2);
+
+                                $bottledBeer->printBottlesForFront();
+                            ?>
+
+                            <!--<div class="six columns">
                                 <ul id="wine-column1">
                                     <li>Bottled Beer 1</li>
                                     <li>Bottled Beer 2</li>
@@ -198,7 +165,7 @@
                                     <li>Bottled Beer 9</li>
                                     <li>Bottled Beer 10</li>
                                 </ul>    
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </li>

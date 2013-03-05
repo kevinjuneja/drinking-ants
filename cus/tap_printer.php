@@ -19,7 +19,7 @@
 		
 		
 		// depenedent on css html...
-		function printTaps() {
+		function printTapsForFront() {
 			
 			$count = 0;
 			$columnCount = 1;
@@ -28,8 +28,8 @@
 
 			while ($row = $this->queryRunner->getRow()) {
 					
-					$beername = $row[1];
-					$brewery = $row[2];
+					$beername = $this->queryRunner->removeEscapeChars($row[1]);
+					$brewery = $this->queryRunner->removeEscapeChars($row[2]);
 					$alcoholcont = $row[3];
 
 				//do something...
@@ -42,7 +42,7 @@
 				}
 				
 				if (!is_null($alcoholcont)) {
-					$alcoholcont = $alcoholcont . "%";
+					$alcoholcont = $this->queryRunner->removeEscapeChars($alcoholcont . "%");
 					echo "<li>" . $beername . " " . $brewery . ", " . $alcoholcont . "</li>";
 				}
 				else {
