@@ -13,7 +13,7 @@
 		alc_id INTEGER NOT NULL AUTO_INCREMENT,
 		name VARCHAR(30),
 		maker VARCHAR(30),
-		alcohol_content DECIMAL(2,1),
+		alcohol_content DECIMAL(4,2),
 		type_code INTEGER,
 		PRIMARY KEY (alc_id),
 		FOREIGN KEY (type_code) REFERENCES type (type_id)

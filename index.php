@@ -143,6 +143,7 @@
                         <div class="row">
                             <?php
                                 $bottledBeer = new bottle_printer();
+                                $bottledBeer->countRows(2);
                                 $bottledBeer->getBottles(2);
 
                                 $bottledBeer->printBottlesForFront();
@@ -176,10 +177,10 @@
                     <div class="content">
                         <div class="row">
                            <?php
-                                $bottledBeer = new bottle_printer();
-                                $bottledBeer->getBottles(3);
-
-                                $bottledBeer->printBottlesForFront();
+                                $bottledWine = new bottle_printer();
+                                $bottledWine->countRows(3);
+                                $bottledWine->getBottles(3);
+                                $bottledWine->printBottlesForFront();
                             ?>
                             <!--<div class="six columns">
                                 <ul id="wine-column1">

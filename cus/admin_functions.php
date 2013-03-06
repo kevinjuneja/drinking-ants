@@ -39,6 +39,20 @@ class AdminFunctions {
 		return $this->runner->queryRunner($query);
 	}
 
+	function addBeerBottle($name, $brewer, $alcohol_content) {
+		$query = "INSERT INTO alcohol (name, maker, alcohol_content, type_code) " .
+		"VALUES('$name', '$brewer', $alcohol_content, 2)";
+		 return $this->runner->queryRunner($query);
+	}
+
+	function addWineBottle($name, $brewer, $alcohol_content) {
+		$query = "INSERT INTO alcohol (name, maker, alcohol_content, type_code) " .
+		"VALUES('$name', '$brewer', $alcohol_content, 3)";
+		 return $this->runner->queryRunner($query);
+	}
+
+
+
 	/*function updateTap($tap_id, $beer_id) {
 		$tap_id = $this->cleanUp($tap_id);
 		$beer_id = $this->cleanUp($beer_id);
@@ -68,7 +82,7 @@ class AdminFunctions {
 		$query = "INSERT INTO menu (name, description, price, type_code) " . "VALUES('$name','$description', $price, $menuCode)";
 
 		//return 
-		$this->runner->queryRunner($query);
+		return $this->runner->queryRunner($query);
 		
 	}
 
