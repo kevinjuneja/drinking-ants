@@ -1,6 +1,7 @@
 <?php
     include_once 'cus/tap_printer.php';
     include_once 'cus/bottle_printer.php';
+    include_once 'cus/menuPrinter.php';
 ?>
 <!DOCTYPE html>
 
@@ -216,7 +217,14 @@
     </div>
     <div class="row">
         <div class="six columns">
-            <h4>Appetizers</h4> 
+            <?php
+                $menuprinter = new MenuPrinter();
+
+                $menuprinter->printFirstColumnTypes(4);
+                $menuprinter->printFirstColumnTypes(5);
+                $menuprinter->printFirstColumnTypes(10);
+            ?>
+            <!--<h4>Appetizers</h4> 
             <ul id="appetizers">
                 <li>
                     <p class="menu-item">Hummus &amp; Pita</p>
@@ -257,8 +265,8 @@
                     <p class="menu-item">Chili Fries</p>
                     <p class="menu-description">French fries w/ chili and cheddar cheese</p>
                 </li>
-            </ul>
-            <h4>Salads &amp; Soup</h4>       
+            </ul>-->
+            <!--<h4>Salads &amp; Soup</h4>       
             <ul id="salads-and-soup">
                 <li>
                     <p class="menu-item">Salad of the Week</p>
@@ -272,8 +280,8 @@
                     <p class="menu-item">Vegetarian Chili</p>
                     <p class="menu-description">8 oz. bowl served w/ cornbread</p>
                 </li>
-            </ul>
-            <h4>Drinks</h4>
+            </ul>-->
+            <!--<h4>Drinks</h4>
             <ul id="drinks">
                 <li>
                     <p class="menu-item">Fountain Drinks</p>
@@ -297,7 +305,7 @@
                 <li>
                     <p class="menu-item">Sobe No Fear Energy Drink</p>
                 </li>
-            </ul>
+            </ul>-->
         </div>
         <div class="six columns">
             <h4 class="section-with-description">From the Grille</h4> 

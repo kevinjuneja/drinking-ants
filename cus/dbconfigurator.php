@@ -29,10 +29,10 @@
 	$two = "Bottled Beers";
 	$three = "Bottled Wines";
 	$four = "Appetizers";
-	$five = "Soups and Salads";
+	$five = "Salads & Soups";
 	$six = "From the Grille";
 	$seven = "Build Your Own Burger";
-	$eight = "Burger Add-ons";
+	$eight = "Add-ons";
 	$nine = "Sandwiches";
 	$ten = "Drinks";
 
@@ -43,7 +43,7 @@
 
 	for ($i = 0; $i < $length; $i++) {
 		$code = $i + 1;
-		$temp = $arrayOfTypes[$i];
+		$temp = mysqli_escape_string($this->runner->getConn(), $arrayOfTypes[$i]);
 		$runner->queryRunner("INSERT INTO type (type_id, code) VALUES ($code, '$temp') ");
 	}
 

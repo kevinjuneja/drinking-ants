@@ -77,8 +77,14 @@ class AdminFunctions {
 
 		$name = $this->cleanUp($name);
 		$description = $this->cleanUp($description);
-		$price = $this->cleanUp($price);
-
+		
+		if(is_null($price) || $price == "") {
+			$price = NULL;
+		}
+		else {
+			$price = $this->cleanUp($price);
+		}
+		
 		$query = "INSERT INTO menu (name, description, price, type_code) " . "VALUES('$name','$description', $price, $menuCode)";
 
 		//return 

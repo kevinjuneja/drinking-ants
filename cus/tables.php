@@ -21,8 +21,8 @@
 
 	$menu = "CREATE TABLE menu (
 		m_id INTEGER NOT NULL AUTO_INCREMENT,
-		name VARCHAR (40),
-		description VARCHAR(100),
+		name VARCHAR (100),
+		description VARCHAR(500),
 		price DECIMAL(2,2),
 		type_code INTEGER,
 		PRIMARY KEY (m_id),
