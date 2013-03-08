@@ -63,7 +63,10 @@
 					$alcoholcont = $this->queryRunner->removeEscapeChars(", " . $alcoholcont . "%");
 				}
 
-				echo "<li>" . $name . " " . $maker . $alcoholcont . "</li>";
+				echo "<li>";
+				echo "<p><span style=\"font-weight:bold\">" . $maker . "</span><br />"; 
+				echo "" . $name . $alcoholcont . "</p>";
+				echo "</li>";
 
 				if (++$count == $numberOfEntriesPerColumn) {
 					echo "</ul>";

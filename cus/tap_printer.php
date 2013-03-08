@@ -41,12 +41,18 @@
 					$columnCount++;
 				}
 				
-				if (!is_null($alcoholcont)) {
-					$alcoholcont = $this->queryRunner->removeEscapeChars($alcoholcont . "%");
-					echo "<li>" . $beername . " " . $brewery . ", " . $alcoholcont . "</li>";
+				if (!is_null($alcoholcont) && $brewery != "") {
+					$alcoholcont = $this->queryRunner->removeEscapeChars(", " . $alcoholcont . "%");
+					echo "<li>";
+					echo "<p><span style=\"font-weight:bold\">" . $brewery . "</span><br />"; 
+					echo "" . $beername . $alcoholcont . "</p>";
+					echo "</li>";
 				}
 				else {
-					echo "<li>" . $beername . " " . $brewery . "</li>";
+					echo "<li>";
+					//echo "<p><span style=\"font-weight:bold\">" . $brewery . "</span>"; 
+					echo "<p>" . $beername . "</p>";
+					echo "</li>";
 				}
 				
 				$count++;
