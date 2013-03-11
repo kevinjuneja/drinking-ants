@@ -72,12 +72,21 @@ class AdminFunctions {
 		
 	}
 
-	function addEvent($title, $description, $date, $time) {
+	function addEvent($title, $description, $startdate, $enddate, $time) {
 		$title = $this->cleanUp($title);
 		$description = $this->cleanUp($description);
-		$date = $this->cleanUp($date);
+		//$date = $this->cleanUp($date);
+		$sDate = $startdate;
+		$eDate = $enddate;
+		$time = $this->cleanUp($time);
 
-		$query = "INSERT INTO event (title, description, date, time) " . "VALUES('$title', '$description', '$date','$time')";
+		if (is_null($eDate) || $eDate == "" || $eDate == 0 || $eDate == '0000-00-00') {
+			$eDate == NULL;
+		}
+
+
+		$query = "INSERT INTO event (title, description, startdate, enddate, time) " . 
+		"VALUES('$title', '$description', '$sDate', '$eDate', '$time')";
 
 		return $this->runner->queryRunner($query);
 	}

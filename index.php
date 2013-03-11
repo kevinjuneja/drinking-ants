@@ -3,6 +3,7 @@
     include_once 'cus/bottle_printer.php';
     include_once 'cus/menuPrinter.php';
     include_once 'cus/pressprinter.php';
+    include_once 'cus/eventprinter.php';
 ?>
 <!DOCTYPE html>
 
@@ -422,7 +423,13 @@
     <div id="events-row" class="row">
         <div class="eight columns offset-by-four">
             <h3>EVENTS</h3>
-            <div class="event-container">
+            <?php
+                $event = new EventPrinter();
+
+                $event->printEvent();
+
+            ?>
+            <!--<div class="event-container">
                 <p class="date">
                     <span class="event-date">3/2/2013</span>
                     <br/>
@@ -457,7 +464,7 @@
                     <br/>
                     <span class="event-description">Learn about plants on a totally irrelevant day!</span>
                 </p>
-            </div>
+            </div>-->
             <div class="event-container">
                 <p class="date">
                     <span class="event-date">5/5/2013-5/6/2013</span>

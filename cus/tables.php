@@ -31,11 +31,11 @@
 
 	$events = "CREATE TABLE event (
 		e_id INTEGER NOT NULL AUTO_INCREMENT,
-		title VARCHAR(100),
-		description VARCHAR(100),
+		title VARCHAR(1000),
+		description VARCHAR(1000),
 		startdate DATE,
 		enddate DATE,
-		time VARCHAR(8),
+		time VARCHAR(20),
 		PRIMARY KEY (e_id)
 	)";
 	
