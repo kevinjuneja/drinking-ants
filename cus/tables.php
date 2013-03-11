@@ -33,8 +33,9 @@
 		e_id INTEGER NOT NULL AUTO_INCREMENT,
 		title VARCHAR(100),
 		description VARCHAR(100),
-		date DATE,
-		time TIME,
+		startdate DATE,
+		enddate DATE,
+		time VARCHAR(8),
 		PRIMARY KEY (e_id)
 	)";
 	
@@ -48,11 +49,11 @@
 
 	$press = "CREATE TABLE press (
 		p_id INTEGER NOT NULL AUTO_INCREMENT,
-		title VARCHAR(40),
-		description VARCHAR(100),
-		date VARCHAR(30),
-		picture_location VARCHAR(100),
-		article_link VARCHAR(100),
+		title VARCHAR(100),
+		publication VARCHAR(50),
+		description VARCHAR(1000),
+		picture_location VARCHAR(1000),
+		article_link VARCHAR(1000),
 		PRIMARY KEY (p_id)
 	)";
 	

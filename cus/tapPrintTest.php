@@ -1,14 +1,19 @@
 <?php
-	
-	include 'bottle_printer.php';
+	include 'admin_functions.php';
 
-	 $tap_printer = new bottle_printer();
-     $tap_printer->countRows(2);
-     $tap_printer->getBottles(2);
-     $tap_printer->printBottlesForFront();
+	$admin = new AdminFunctions();
+
+	$title = "Hopped Up: The Quarter Club";
+	$description = "Finding reasons to drink is an unwritten obligation of being a college student. From bar-hopping in Newport on Saturday, to “Wastey Wednesday” and “12-Pack Tuesday” themed drinking during the week, there’s no shortage of opportunities to get your drink on. Therefore, the popularity of The Anthill Pub and Grille’s infamous Quarter Club comes as no surprise.";
+	$publication = "New University";
+	$picture = "3.jpg";
+	$article = "http://www.newuniversity.org/2012/04/features/hopped-up-the-quarter-club/";
 
 
-     //echo 13 % 2;
+	$result = $admin->addPress($title, $publication, $description, $picture, $article);
 
-     //echo (int)(11 / 2);
+	if (!$result) {
+		print mysqli_error($admin->getQuery()->getConn());
+	}
+
 ?>

@@ -45,6 +45,7 @@
 
 				echo "</li>";
 			}
+			echo "</ul>";
 		}
 
 		function printFromTheGrille() {
@@ -60,7 +61,7 @@
 			$headerP = "SELECT code FROM type WHERE type_id = 7";
 			$this->queryRunner->queryRunner($headerP);
 			$headerRow = $this->queryRunner->getRow();
-			$header = $this->removeEscapeChars($headerRow[0]);
+			$header = $this->queryRunner->removeEscapeChars($headerRow[0]);
 
 			echo "<p class=\"menu-item\">" . $header . "</p>";
 			echo "<p class=\"menu-description\">All burgers served w/ lettuce, tomato, onion, and mayo</p>";
@@ -70,7 +71,7 @@
 			$this->queryRunner->queryRunner($burgerQuery);
 
 			while ($row = $this->queryRunner->getRow()) {
-				$name = $this->removeEscapeChars($row[0]);
+				$name = $this->queryRunner->removeEscapeChars($row[0]);
 				echo "<li>" . $name . "</li>";
 			}
 
@@ -90,7 +91,7 @@
 			$this->queryRunner->queryrunner($addonQuery);
 
 			while ($row = $this->queryRunner->getRow()) {
-				$name = $this->removeEscapeChars($row[0]);
+				$name = $this->queryRunner->removeEscapeChars($row[0]);
 				$description = $row[1];
 
 				if(is_null($description) || $description == "") {
@@ -126,6 +127,48 @@
 				echo "</li>";
 			}
 			echo "</ul>";
+		}
+
+		function printSandwiches() {
+
+			$query = "SELECT code FROM type WHERE type_id = 9";
+
+			$this->queryRunner->queryRunner($query);
+
+			$hrow = $this->queryRunner->getRow();
+
+			$header = $this->queryRunner->removeEscapeChars($hrow[0]);
+
+			echo "<h4 class=\"section-with-description\">" . $header . "</h4>";
+			echo "<p class=\"menu-description\">All sandwiches are served with deli chips and a pickle spear.</p>";
+			echo "<ul id=\"" . strtolower($header) . "\">";
+
+			$query = "SELECT m.m_id, m.name, m.description, m.price 
+			FROM menu m WHERE m.type_code = 9";
+
+			$this->queryRunner->queryRunner($query);
+
+			while($row = $this->queryRunner->getRow()) {
+				$name = $this->queryRunner->removeEscapeChars($row[1]);
+				$description = $row[2];
+				$price = $row[3];
+
+				echo "<li>";
+				echo "<p class=\"menu-item\">" . $name . "</p>";
+				
+				if (!is_null($description)) {
+					echo "<p class=\"menu-description\">" . $this->queryRunner->removeEscapeChars($description) . "</p>";
+				}
+				if (!is_null($price)) {
+					echo "<p class=\"menu-description\">" . $price . "</p>";
+				} 
+
+				echo "</li>";
+			}
+
+			echo "</ul>";
+
+			$this->queryRunner->disconnect();
 		}
  	};
 ?>

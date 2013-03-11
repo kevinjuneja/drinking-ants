@@ -45,7 +45,7 @@
 					$alcoholcont = $this->queryRunner->removeEscapeChars(", " . $alcoholcont . "%");
 					echo "<li>";
 					echo "<p><span style=\"font-weight:bold\">" . $brewery . "</span><br />"; 
-					echo "" . $beername . $alcoholcont . "</p>";
+					echo $beername . $alcoholcont . "</p>";
 					echo "</li>";
 				}
 				else {

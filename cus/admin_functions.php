@@ -27,6 +27,7 @@ class AdminFunctions {
 		return $info;
 	}
 
+	function getQuery() { return $this->runner; }
 
 	/*** Functions for use throughout app ***/
 
@@ -51,27 +52,6 @@ class AdminFunctions {
 		 return $this->runner->queryRunner($query);
 	}
 
-
-
-	/*function updateTap($tap_id, $beer_id) {
-		$tap_id = $this->cleanUp($tap_id);
-		$beer_id = $this->cleanUp($beer_id);
-
-		$query = "UPDATE taps t SET t.beer_id = $beer_id WHERE t.tap_id = $tap_id";
-
-		return $this->runner->queryRunner($query);
-	}
-
-
-	function addBeer($beer_name, $brewery, $alchol_content) {
-		$beer_name = $this->cleanUp($beer_name);
-		$brewery = $this->cleanUp($brewery);
-		$alchol_content = $this->cleanUp($alchol_content);
-
-		$query = "INSERT INTO beer (beer_name, brewery, alcohol_content) " . "VALUES('$beer_name','$brewery', $alchol_content )";
-
-		return $this->runner->queryRunner($query);
-	}*/
 
 	function addMenuItem($name, $description, $price, $menuCode) {
 
@@ -102,17 +82,17 @@ class AdminFunctions {
 		return $this->runner->queryRunner($query);
 	}
 
-	function addPress($title, $description, $date, $picture, $article, $conn) {
-		$title = cleanUp($title, $conn);
-		$description = cleanUp($description, $conn);
-		$date = cleanUp($date, $conn);
-		$picture = cleanUp($picture, $conn);
-		$article = cleanUp($article, $conn);
+	function addPress($title, $publication, $description, $picture, $article) {
+		$title = $this->cleanUp($title);
+		$desc = $this->cleanUp($description);
+		$publ = $this->cleanUp($publication);
+		$pic = urlencode($this->cleanUp($picture));
+		$link = $this->cleanUp($article);
 
-		$query = sprintf("INSERT INTO press (title, description, date, picture, article_link)" . 
-		"VALUES ('%s', '%s', '%s', '%s', '%s')", $title, $description, $date, $picture, $article);
+		$query = "INSERT INTO press (title, publication, description, picture_location, article_link)" . 
+		" VALUES ('$title', '$publ', '$desc', '$pic', '$link')";
 
-		return queryRunner($query, $conn);
+		return $this->runner->queryRunner($query);
 	}
 	
 	function isValidUser($username, $password) {

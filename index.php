@@ -2,6 +2,7 @@
     include_once 'cus/tap_printer.php';
     include_once 'cus/bottle_printer.php';
     include_once 'cus/menuPrinter.php';
+    include_once 'cus/pressprinter.php';
 ?>
 <!DOCTYPE html>
 
@@ -72,7 +73,13 @@
         </div>
         <div class="six columns">
             <div id="press-slider">
-                <div class="press-slide">
+                <?php
+                    $press = new PressPrinter();
+
+                    $press->printPress();
+                ?>
+
+                <!--<div class="press-slide">
                     <h3>NEWS</h3>
                     <h4>Newspaper 1</h4>
                     <div class="inner-slide-div">
@@ -110,7 +117,7 @@
                             <li><a class="alert button" data-reveal-id="press-reveal-1">View Screenshot</a></li>
                         </ul>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
@@ -308,7 +315,12 @@
             </ul>-->
         </div>
         <div class="six columns">
-            <h4 class="section-with-description">From the Grille</h4> 
+            <?php
+                $menuprinter->printFromTheGrille();
+                $menuprinter->printSandwiches();
+            ?>
+
+            <!--<h4 class="section-with-description">From the Grille</h4> 
             <p class="menu-description">All entrees served with chips and pickle spear unless otherwise noted.</p>
             <ul id="from-the-grille">
                 <li>
@@ -365,8 +377,8 @@
                     <p class="menu-item">Salmon BLT</p>
                     <p class="menu-description">w/ smoked bacon &amp; lemon caper aioli</p>
                 </li>
-            </ul>
-            <h4 class="section-with-description">Sandwiches</h4>
+            </ul>-->
+            <!--<h4 class="section-with-description">Sandwiches</h4>
             <p class="menu-description">All sandwiches served with deli chips and pickle spear.</p>       
             <ul id="sandwiches">
                 <li>
@@ -395,7 +407,7 @@
                     <p class="menu-item">BBQ Tri Tip Sandwich</p>
                     <p class="menu-description">Grilled sliced tri tip on a hoagie roll w/ barbecue sauce</p>
                 </li>
-            </ul>
+            </ul>-->
         </div>
     </div>
     <div class="row">
@@ -492,7 +504,11 @@
     </div>
 </div>
 
-<div id="press-reveal-1" class="reveal-modal">
+<?php
+    $press->pressReveals();
+?>
+
+<!--<div id="press-reveal-1" class="reveal-modal">
     <img src="img/flagmap.jpg" />
     <a class="close-reveal-modal">&#215;</a>
 </div>
@@ -503,7 +519,7 @@
 <div id="press-reveal-3" class="reveal-modal">
     <img src="img/flagmap.jpg" />
     <a class="close-reveal-modal">&#215;</a>
-</div>
+</div>-->
 
 <script src="foundation/javascripts/jquery.js"></script>
 

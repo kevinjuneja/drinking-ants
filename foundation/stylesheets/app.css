@@ -193,6 +193,7 @@ div.press-slide {
 ----------------------------------------- */
 div#beer {
     background-color: #000033;
+     background: url(../../img/beer_bg.jpg);
 }
 .accordion h4 {
     font-family: "Exo";
