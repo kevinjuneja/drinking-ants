@@ -223,6 +223,8 @@ div#menu {
     font-weight: 800;
     color: #b90d0d;
     font-size: 26px;
+    letter-spacing: -0.5pt;
+    margin: 1.25em 0 0.15em 0;
 }
 #menu h4.section-with-description {
     margin-bottom: 1px;
@@ -239,11 +241,13 @@ div#menu {
 p.menu-item {
     font-weight: bold;
     font-size: 16px;
-    margin-bottom: 1px;
+    letter-spacing: -.5pt;
+    margin: 1em 0 0 0;
 }
 p.menu-description {
     font-size: 12px;
     color: #797979;
+    line-height: 12pt;
 }
 p.menu-item, #burger-options li, #burger-addons li {
     color: #f1f1f1;
@@ -254,6 +258,7 @@ p.menu-item, #burger-options li, #burger-addons li {
 }
 #burger-addons-li {
     margin-top: 10px;
+    letter-spacing: -.5pt;
 }
 #burger-addons p {
     margin-bottom: 0px;
