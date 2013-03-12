@@ -113,13 +113,19 @@ class AdminFunctions {
 		return $this->runner->queryRunner($query);
 	}
 
-	function login($username, $password) {
-		$query = "SELECT password FROM user WHERE username = $username";
+	function login($username) {
+		$query = "SELECT password FROM user WHERE username = '$username'";
 		return $this->runner->queryRunner($query);
 	}
 
-	function registration() {
+	function registration($username, $password) {
 		
+		$hashed = $this->hashIt($password);
+
+		$query = "INSERT INTO user (username, password) VALUES('$username', '$hashed')";
+
+		return $this->runner->queryRunner($query);
+
 	}
 
 	function kill_connection() {
@@ -129,9 +135,11 @@ class AdminFunctions {
 	 function validate($pw, $hash) {
 			
 		$salt = substr($hash, 0, 64);
-		$validHash = substr($hash, 64,64);
-		$testHash = hash("sha256",$salt . $pw);
+		$validHash = substr($hash, 64, 64);
+		$testHash = hash("sha256", $salt . $pw);
 		$checkHash=utf8_encode($testHash);
+	//	echo "checkagainst: " . $checkHash . "<br />";
+	//	echo "valid: " . $validHash;
 		return $checkHash === $validHash;
 	}
 

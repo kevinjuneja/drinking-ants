@@ -464,7 +464,7 @@
                     <br/>
                     <span class="event-description">Learn about plants on a totally irrelevant day!</span>
                 </p>
-            </div>-->
+            </div>
             <div class="event-container">
                 <p class="date">
                     <span class="event-date">5/5/2013-5/6/2013</span>
@@ -476,7 +476,7 @@
                     <br/>
                     <span class="event-description">It's taco time! We're having this fiesta leading into the next morning!</span>
                 </p>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>
