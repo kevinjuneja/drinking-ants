@@ -10,7 +10,7 @@
     }
     else {
        // echo "Session is not set";
-        header(sprintf("Location: %s", $index));
+        header(sprintf("Location: %s", "../../index.php"));
         exit;
     }
 
@@ -31,13 +31,13 @@
     <body>
     	<div class="menu_container">
     		<div class="header">
-    			<p>Anthill Pub & Grille Admin Panel</p>
+    			<p>Anthill Pub &amp; Grille Admin Panel</p>
     		</div>
     		<br/>
     		<div class="non_type">
     			Click a button below to view and edit its content.
     			<br/>
-    			<a href="#" class="drinks button">Drinks</a>
+    			<a href="editDrinks.php" class="drinks button">Drinks</a>
     			<a href="#" class="drinks_page button">View Website</a>
     			<a href="#" class="events button">Events</a>
     			<a href="#" class="events_page button">View Website</a>

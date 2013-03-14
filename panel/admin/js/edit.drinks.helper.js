@@ -102,7 +102,7 @@ function addDrink()
             expression: "if (VAL) return true; else return false;",
             message: "Please enter the Required field"
         });
-       
+        $("#brewerField").val("");
         
         
         $("#nameField").validate(
@@ -110,21 +110,23 @@ function addDrink()
             expression: "if (VAL) return true; else return false;",
             message: "Please enter the Required field"
         });
+        $("#nameField").val("");
         
         
+
         $("#editSelection").validate(
         {
             expression: "if (VAL != '0') return true; else return false;",
             message: "Please make a selection"
         });
-       
-
+      
         
         $("#typeField").empty();
         $("#typeField").append("<option value=\"0\">Make a Selection</option>");
         $("#typeField").append("<option value=\"Bottle\">Bottle</option>");
         $("#typeField").append("<option value=\"Wine\">Wine</option>");
         
+        $("typeField").val("0");
         
         $("#percentageField").validate(
 		{
@@ -132,9 +134,12 @@ function addDrink()
             message: "Please enter the Required field"
         });
         
+        $("#percentageField").val("");
+
       	$(".confirm_add").remove();
       	$(".confirm_edit").remove();
       	$(".edit_form").append("<div class=\"confirm_add confirm_button\">Add</div>");
+      	
       	LoadMyJs('js/ajax.saver.js');
 	});
 
@@ -221,6 +226,7 @@ function editDrink()
       	$(".confirm_edit").remove();
       	$(".confirm_add").remove();
       	$(".edit_form").append("<div class=\"confirm_edit confirm_button\">Save</div>");
+      	
       	LoadMyJs('js/ajax.saver.js');
         
 	});

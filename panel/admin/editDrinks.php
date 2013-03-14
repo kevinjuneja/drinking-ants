@@ -51,6 +51,7 @@
 					<button id="tap_link" class="filter">Tap</a>
 					<button id="bottle_link" class="filter">Bottle</a>
 					<button id="wine_link" class="filter">Wine</a>
+					<button id="home"><a style="text-decoration:none" href="home.php">Home</a>
 					<button id="current_page_link">View Current Page</a>
 				</div>
 			</div>

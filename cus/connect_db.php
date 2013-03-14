@@ -13,7 +13,7 @@
 		function DbConnection()	{
 			$this->server = "localhost";
 			$this->username = "root";
-			$this->db = "pub";
+			$this->db = "pub2";
 			$this->password = "";
 		}
 		
