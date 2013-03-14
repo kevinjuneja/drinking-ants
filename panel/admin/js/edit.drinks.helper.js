@@ -1,3 +1,11 @@
+function LoadMyJs(scriptName) {
+	var docHeadObj = document.getElementsByTagName("head")[0];
+	var dynamicScript = document.createElement("script");
+	dynamicScript.type = "text/javascript";
+	dynamicScript.src = scriptName;
+	docHeadObj.appendChild(dynamicScript);
+}
+
 function createTable()
 {
 	$("#drinks_table").tablesorter(
@@ -53,13 +61,86 @@ function deleteDrink()
 	
 	$(".confirm_delete").on("click", function(e)
 	{
-		curRow.remove();
+		var id = curRow.find("td.id").text();
+		//curRow.remove();
+
+		$.ajax( {
+			type: 'POST',
+			url: '../../cus/admin/deletedrink.php',
+			data: 'id=' + id,
+			success: function(data) {
+				curRow.remove();
+			}
+		});
+
 		$("#delete_popup").bPopup().close();
 	});
 	
 	$(".cancel_delete").on("click", function(e)
 	{
 		$("#delete_popup").bPopup().close();
+	});
+}
+
+
+function addDrink() 
+{
+
+	$(".addnew").on("click", function(e)
+	{
+		$(".edit_form").bPopup(
+			{
+				modalClose: false,
+				follow: [false, false],
+				positionStyle: 'absolute'
+			});
+
+		$("#idField").html("");
+
+		$("#brewerField").validate(
+		{
+            expression: "if (VAL) return true; else return false;",
+            message: "Please enter the Required field"
+        });
+       
+        
+        
+        $("#nameField").validate(
+		{
+            expression: "if (VAL) return true; else return false;",
+            message: "Please enter the Required field"
+        });
+        
+        
+        $("#editSelection").validate(
+        {
+            expression: "if (VAL != '0') return true; else return false;",
+            message: "Please make a selection"
+        });
+       
+
+        
+        $("#typeField").empty();
+        $("#typeField").append("<option value=\"0\">Make a Selection</option>");
+        $("#typeField").append("<option value=\"Bottle\">Bottle</option>");
+        $("#typeField").append("<option value=\"Wine\">Wine</option>");
+        
+        
+        $("#percentageField").validate(
+		{
+            expression: "if (VAL) return true; else return false;",
+            message: "Please enter the Required field"
+        });
+        
+      	$(".confirm_add").remove();
+      	$(".confirm_edit").remove();
+      	$(".edit_form").append("<div class=\"confirm_add confirm_button\">Add</div>");
+      	LoadMyJs('js/ajax.saver.js');
+	});
+
+	$(".cancel_edit").on("click", function(e)
+	{
+		$(".edit_form").bPopup().close();
 	});
 }
 
@@ -124,6 +205,11 @@ function editDrink()
             message: "Please make a selection"
         });
         $("#typeField").val(curType);
+
+        if (curType == "Tap") {
+        	$("#typeField").empty();
+        	$("#typeField").append("<option value=\"Tap\">Tap</option>");
+        }
         
         $("#percentageField").validate(
 		{
@@ -131,8 +217,11 @@ function editDrink()
             message: "Please enter the Required field"
         });
         $("#percentageField").val(curPerc);
-      
-      
+      	
+      	$(".confirm_edit").remove();
+      	$(".confirm_add").remove();
+      	$(".edit_form").append("<div class=\"confirm_edit confirm_button\">Save</div>");
+      	LoadMyJs('js/ajax.saver.js');
         
 	});
 	
@@ -148,6 +237,7 @@ function myReadyFunction()
 	createTable();
     filterByDrinks();
     deleteDrink();
+    addDrink();
     editDrink();
      
 }

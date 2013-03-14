@@ -1,4 +1,21 @@
 <?php
+	 session_start();
+    
+    include_once '../../cus/variables.php';
+
+    if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == TRUE) {
+
+
+        
+       // echo "success";
+    }
+    else {
+       // echo "Session is not set";
+        header(sprintf("Location: %s", $index));
+        exit;
+    }
+
+
 	include_once '../../cus/tap_printer.php';
 	include_once '../../cus/bottle_printer.php';
 
@@ -177,6 +194,7 @@
 	                </select>
 					<input type="text" name="percentageField" id="percentageField" value=""/>
 					<div class="confirm_edit confirm_button">Save</div>
+					<div class="confirm_add confirm_button">Add</div>
 					<div class="cancel_edit cancel_button">Cancel</div>
 				</form>
 			</div>

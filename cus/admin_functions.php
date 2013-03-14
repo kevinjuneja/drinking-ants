@@ -32,7 +32,11 @@ class AdminFunctions {
 	/*** Functions for use throughout app ***/
 
 
-	function updateTap($alc_id, $name, $brewery, $alcohol_content) {
+	function update($alc_id, $name, $brewery, $alcohol_content) {
+
+		$name = $this->cleanUp($name);
+		$brewery = $this->cleanUp($brewery);
+		$alcohol_content = $this->cleanUp($alcohol_content);
 		
 		$query = "UPDATE alcohol a SET a.name = '$name', a.maker = '$brewery'," . 
 			"a.alcohol_content = '$alcohol_content' WHERE a.alc_id = $alc_id";
@@ -40,18 +44,52 @@ class AdminFunctions {
 		return $this->runner->queryRunner($query);
 	}
 
+	//function updateBottle($alc_id, $name, $brewery, $)
+
 	function addBeerBottle($name, $brewer, $alcohol_content) {
-		$query = "INSERT INTO alcohol (name, maker, alcohol_content, type_code) " .
-		"VALUES('$name', '$brewer', $alcohol_content, 2)";
+		
+		$name = $this->cleanUp($name);
+		$brewer = $this->cleanUp($brewer);
+		$alcohol_content = $this->cleanUp($alcohol_content);
+
+		$this->runner->queryRunner("SELECT COUNT(alc_id) FROM alcohol");
+
+		$row = $this->runner->getRow();
+		$id = (int)$row[0] + 1;
+
+		$query = "INSERT INTO alcohol (alc_id, name, maker, alcohol_content, type_code) " .
+		"VALUES($id,'$name', '$brewer', $alcohol_content, 2)";
 		 return $this->runner->queryRunner($query);
 	}
 
 	function addWineBottle($name, $brewer, $alcohol_content) {
-		$query = "INSERT INTO alcohol (name, maker, alcohol_content, type_code) " .
-		"VALUES('$name', '$brewer', $alcohol_content, 3)";
+		$name = $this->cleanUp($name);
+		$brewer = $this->cleanUp($brewer);
+		$alcohol_content = $this->cleanUp($alcohol_content);
+
+		$this->runner->queryRunner("SELECT COUNT(alc_id) FROM alcohol");
+
+		$row = $this->runner->getRow();
+		$id = (int)$row[0] + 1;
+
+		$query = "INSERT INTO alcohol (alc_id, name, maker, alcohol_content, type_code) " .
+		"VALUES($id,'$name', '$brewer', $alcohol_content, 3)";
 		 return $this->runner->queryRunner($query);
 	}
 
+	function deleteDrink($id) {
+		$query = "DELETE FROM alcohol WHERE alc_id = $id";
+
+		if ($id > 30) {
+			$this->runner->queryRunner($query);
+
+			//$this->runner->queryRunner("SET SQL_SAFE_UPDATES = 0");
+			//$this->runner->queryRunner("ALTER TABLE alcohol AUTO_INCREMENT = 1");
+			//$this->runner->queryRunner("UPDATE alcohol SET alc_id = @count := @count + 1");
+		}
+		return FALSE;
+
+	}
 
 	function addMenuItem($name, $description, $price, $menuCode) {
 

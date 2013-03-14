@@ -327,6 +327,13 @@ tbody tr:hover .edit_icon, tbody tr:hover .delete_icon
 	margin-top: 2px;
 }
 
+.confirm_add
+{
+	position: absolute;
+	left: 650px;
+	margin-top: 2px;
+}
+
 .cancel_edit
 {
 	position: absolute;
