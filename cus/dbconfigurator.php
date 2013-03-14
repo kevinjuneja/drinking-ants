@@ -3,7 +3,7 @@
 	//	apart of package for inital site set up 
 
 
-	include 'tables.php';
+	//include 'tables.php';
 	include_once 'query.php';
 	/***
 	 *	This Area will include notes about TypeCodes and the initial type codes.
@@ -43,7 +43,7 @@
 
 	for ($i = 0; $i < $length; $i++) {
 		$code = $i + 1;
-		$temp = mysqli_escape_string($this->runner->getConn(), $arrayOfTypes[$i]);
+		$temp = mysqli_escape_string($runner->getConn(), $arrayOfTypes[$i]);
 		$runner->queryRunner("INSERT INTO type (type_id, code) VALUES ($code, '$temp') ");
 	}
 

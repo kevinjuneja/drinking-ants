@@ -66,6 +66,33 @@
 			}
 			$this->queryRunner->disconnect();
 		}
+
+		function printForAdmin() {
+
+			while ($row = $this->queryRunner->getRow()) {
+				
+				$id = $row[0];
+				$beername = $this->queryRunner->removeEscapeChars($row[1]);
+				$brewery = $this->queryRunner->removeEscapeChars($row[2]);
+				$alcoholcont = $row[3];
+
+				$alcoholcont = $alcoholcont . "%";
+
+				echo "<tr id=\"" . $id . "\">";
+				echo "<td class=\"id\">" . $id . "</td>";
+				echo "<td class=\"brewer\">" . $brewery . "</td>";
+				echo "<td class=\"name\">" . $beername . "</td>";
+				echo "<td class=\"type\">Tap</td>";
+				echo "<td class=\"percentage\">" . $alcoholcont . "</td>";
+				echo "<td class=\"options\">";
+				echo "<img src=\"media/images/editIcon.png\" alt=\"Edit\" class=\"edit_icon\">";
+				//echo "<img src=\"media/images/deleteIcon.png\" alt=\"Delete\" class=\"delete_icon\">";
+				echo "</td>";
+				echo "</tr>";
+
+			}
+			$this->queryRunner->disconnect();
+		}
 		
     };
 ?>

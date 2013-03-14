@@ -279,15 +279,11 @@ tbody tr:hover .edit_icon, tbody tr:hover .delete_icon
 	background-color: #0099FF;
 }
 
-
-
 #idField
 {
 	position: absolute;
 	padding: 10px;
 }
-
-
 
 #brewerField, #nameField, #typeField, #percentageField
 {

@@ -5,6 +5,7 @@
 
 		var $queryRunner;
 		var $numberOfRows;
+		var $typeCode;
 
 		function bottle_printer() {
 			$this->queryRunner = new Query();
@@ -25,6 +26,8 @@
 		function getBottles($type_code) {
 			
 			//$this->countRows($type_code);
+
+			$this->typeCode = $type_code;
 
 			$query = "SELECT a.alc_id, a.name, a.maker," .
 			 "a.alcohol_content FROM alcohol a WHERE type_code=" . $type_code;
@@ -80,6 +83,43 @@
 				echo "</div>";
 			}
 
+			$this->queryRunner->disconnect();
+		}
+
+		function printForAdmin() {
+
+			while ($row = $this->queryRunner->getRow()) {
+				
+				$id = $row[0];
+				$beername = $this->queryRunner->removeEscapeChars($row[1]);
+				$brewery = $this->queryRunner->removeEscapeChars($row[2]);
+				$alcoholcont = $row[3];
+
+				$alcoholcont = $alcoholcont . "%";
+
+				$type = "";
+
+				if ($this->typeCode == 2) {
+					$type = "Bottle";
+				}
+				if ($this->typeCode == 3) {
+					$type = "Wine";
+				}
+
+
+				echo "<tr id=\"" . $id . "\">";
+				echo "<td class=\"id\">" . $id . "</td>";
+				echo "<td class=\"brewer\">" . $brewery . "</td>";
+				echo "<td class=\"name\">" . $beername . "</td>";
+				echo "<td class=\"type\">" . $type ."</td>";
+				echo "<td class=\"percentage\">" . $alcoholcont . "</td>";
+				echo "<td class=\"options\">";
+				echo "<img src=\"media/images/editIcon.png\" alt=\"Edit\" class=\"edit_icon\">";
+				echo "<img src=\"media/images/deleteIcon.png\" alt=\"Delete\" class=\"delete_icon\">";
+				echo "</td>";
+				echo "</tr>";
+
+			}
 			$this->queryRunner->disconnect();
 		}
 	};

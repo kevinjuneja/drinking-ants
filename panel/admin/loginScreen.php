@@ -18,43 +18,46 @@
         $username = $_POST["username"];
         $password = $_POST["password"];
 
-        if (!($functions->isValidUser($username, $password))) {
-            $registered = FALSE;
+        if (((count($username) < 31) && (count($username) > 0) ) && ((count($password) < 31) && (count($password) > 0) ) ) {     
 
-            echo "not a valid user";
-        }
+            if (!($functions->isValidUser($username, $password))) {
+                $registered = FALSE;
 
-        if ($registered == FALSE) {
-          //  header(sprintf("Location: %s", $index));
-          //  exit;
-        }
-
-        if ($registered == TRUE) {
-            $results = $functions->login($username);
-
-            if(!$results) {
-             //   header(sprintf("Location: %s", $index));
-              //  exit;
-                echo "error loggin in";
+                echo "not a valid user";
             }
 
-            $row = mysqli_fetch_row($results);
-            $hashedPw = $row[0];
-            $validated = $functions->validate($password, $hashedPw);
-
-            if ($validated == FALSE) {
-               // header(sprintf("Location: %s", $index));
-                echo "validated was false after password validation";
-              //  exit;
+            if ($registered == FALSE) {
+            //  header(sprintf("Location: %s", $index));
+            //  exit;
             }
-            if ($validated == TRUE) {
+
+            if ($registered == TRUE) {
+                $results = $functions->login($username);
+
+                if(!$results) {
+                //   header(sprintf("Location: %s", $index));
+                //  exit;
+                    echo "error loggin in";
+                }
+
+                $row = mysqli_fetch_row($results);
+                $hashedPw = $row[0];
+                $validated = $functions->validate($password, $hashedPw);
+
+                if ($validated == FALSE) {
+                   // header(sprintf("Location: %s", $index));
+                    echo "validated was false after password validation";
+                //  exit;
+                }
+                if ($validated == TRUE) {
                 
-                $_SESSION["logged_in"] = TRUE;
+                    $_SESSION["logged_in"] = TRUE;
 
                 //redirct to admin panel.
-                header(sprintf("Location: %s", $admin));
-                echo "Successful login";
+                  header(sprintf("Location: %s", $admin));
+                    echo "Successful login";
               //  exit;
+                 }
             }
         }
 

@@ -32,7 +32,7 @@ input:focus, select:focus {
 
 span.ValidationErrors {
     display: inline-block;
-    font-size: 12px;
+    font-size: 14px;
     color: #D00;
     padding-left: 10px;
     font-style: italic;
