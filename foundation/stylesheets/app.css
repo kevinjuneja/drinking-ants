@@ -181,11 +181,12 @@ div.press-slide {
 #press-slider h3 {
     margin-top: 5px;
     margin-bottom: 0px;
+    color: #272822;
 }
 #press-slider h4 {
     text-align: center;
     margin-top: 0px;
-    color: white;
+    color: #272822;
     font-size: 16px;
 }
 .inner-slide-div {
