@@ -47,15 +47,15 @@
         <p id="hours">M-W: 11am-Midnight &bull; Th-F: 11am-1am &bull; Sat: 7pm-1am<br/>Happy Hour M-F: 4pm-7pm</p>
     </div>
     <div id="nav-menu" class="hide-for-small">
-        <ul class="nav-right" data-magellan-expedition="fixed">
+        <ul class="nav-right hide-for-small" data-magellan-expedition="fixed">
             <li data-magellan-arrival="find-us" class="li-center"><a href="#find-us">FIND US</a></li>
-            <li><img src="img/anthillpub-navdivider-white.png" class="nav-divider" /></li>
+            <li><img src="img/anthillpub-navdivider-black.png" class="nav-divider" /></li>
             <li data-magellan-arrival="events" class="li-center"><a href="#events">EVENTS</a></li>
-            <li><img src="img/anthillpub-navdivider-white.png" class="nav-divider" /></li>
+            <li><img src="img/anthillpub-navdivider-black.png" class="nav-divider" /></li>
             <li data-magellan-arrival="menu" class="li-center"><a href="#menu">MENU</a></li>
-            <li><img src="img/anthillpub-navdivider-white.png" class="nav-divider" /></li>
+            <li><img src="img/anthillpub-navdivider-black.png" class="nav-divider" /></li>
             <li data-magellan-arrival="beer" class="li-center"><a href="#beer">BEER</a></li>
-            <li><img src="img/anthillpub-navdivider-white.png" class="nav-divider" /></li>
+            <li><img src="img/anthillpub-navdivider-black.png" class="nav-divider" /></li>
             <li data-magellan-arrival="about-us" class="li-center"><a href="#about-us">ABOUT US</a></li>
         </ul>
     </div>    
@@ -72,7 +72,7 @@
                 We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. We serve beer. 
             </p>
         </div>
-        <div class="six columns">
+        <div class="six columns hide-for-small">
             <div id="press-slider">
                 <?php
                     $press = new PressPrinter();
@@ -548,21 +548,17 @@
                 if ($(window).width() > 767) {
                     $("#nav-logo").fadeIn(150); //reached the desired point -- show div
                 }
-                $('.nav-right').animate({backgroundColor: '#000000'}, 150);
                 $('.nav-right').css("margin-top",".85%");
-                $('.nav-divider').attr("src", "img/anthillpub-navdivider-black.png");
                 $('.nav-right').css("border-bottom","solid 8px #b4b0b0");
-                $('.nav-right li a').css("color","#FFFFFF");
                 $('#nav-menu').css("border-top","0");
+                $('.nav-right').css("background","black");
             } else {
                 if ($(window).width() > 767) {
                     $("#nav-logo").fadeOut(150); // hide when we scroll back up
                 }
                 $('.nav-right').css("margin-top","0");
-                $('.nav-divider').attr("src", "img/anthillpub-navdivider-white.png");
                 $('.nav-right').css("border-bottom","0");
                 $('#nav-menu').css("border-top","solid 8px #b4b0b0");
-                $('.nav-right li a').css("color","#b4b0b0");
             }
         });
     });
@@ -570,11 +566,9 @@
     $(window).resize(function() {
         if ($(window).width() < 767) {
             $("#events").css("background","#461312");
-            $(".press-slide").css("padding", "0px 20px");
         } else {
             $("#events").css("background","url(img/anthillpub-events-sidephotos.jpg) no-repeat 10% 75px #461312");
             $("#events").css("background-size","25% 100%");
-            $(".press-slide").css("padding", "0px 39px");
         }
     });
 
@@ -590,7 +584,6 @@
 
         if ($(window).width() < 767) {
             $("#events").css("background","#461312");
-            $(".press-slide").css("padding", "0px 20px");
         }
     });
 

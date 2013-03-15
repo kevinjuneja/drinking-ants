@@ -55,9 +55,12 @@ div#front-page, div#about-us, div#beer, div#menu, div#events, div#find-us {
     width: 100%;
     float: right;
     margin-top: 1.9%;
+    margin-bottom: .8%;
     border-top: solid 8px #b4b0b0;
-    background-color: white;
+    background-color: black;
     z-index: 90;
+    position: absolute;
+    bottom: 0;
 }
 .nav-right {
     width: 100%;
@@ -72,12 +75,16 @@ div#front-page, div#about-us, div#beer, div#menu, div#events, div#find-us {
     font-family: 'Exo', sans-serif;
     font-weight: 800;
     height: 51px;
+    background-color: black;
 }
 .nav-right li.li-center {
     padding: .75% 0;
 }
 .nav-right li a {
-    color: #b4b0b0;
+    color: white;
+}
+.nav-right li .active a {
+    color: red;
 }
 
 
@@ -98,7 +105,7 @@ div#front-page {
     display: block;
     max-width: 100%;
     margin: 0 auto;
-    padding: 15% 0 0;
+    padding: 17% 0 0;
     opacity:0.85;
     filter:alpha(opacity=85); /* For IE8 and earlier */
 }
@@ -133,13 +140,6 @@ p#hours {
 div#about-us {
     color: #F5F5F5;
     background-color: #272822;
-/*    background: url(../../img/anthillpub-aboutus-bg.jpg) no-repeat center center fixed #324a6f;
-    -webkit-background-size: cover; 
-    -moz-background-size: cover; 
-    -o-background-size: cover;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-aboutus-bg.jpg', sizingMethod='scale');
-    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-aboutus-bg.jpg', sizingMethod='scale')";
-    background-size: cover;*/
 }
 #about-us-row {
     padding: 10% 0 0; 
@@ -313,13 +313,6 @@ div#events {
 div#find-us {
     color: #F5F5F5;
     background-color: #272822;
-   /* background: url(../../img/anthillpub-findus-bg.jpg) no-repeat center center fixed #324a6f;
-    -webkit-background-size: cover; 
-    -moz-background-size: cover; 
-    -o-background-size: cover;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-findus-bg.jpg', sizingMethod='scale');
-    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/anthillpub-findus-bg.jpg', sizingMethod='scale')";
-    background-size: cover;*/
 }
 #find-us-row {
     padding: 4% 0 0; 
