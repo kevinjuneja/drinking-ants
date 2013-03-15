@@ -83,10 +83,23 @@ div#front-page, div#about-us, div#beer, div#menu, div#events, div#find-us {
 .nav-right li a {
     color: white;
 }
-.nav-right li .active a {
-    color: red;
+.nav-right li a:hover {
+    text-shadow: 3px 3px 0px #000000, 5px 5px 0px #d80000;
+    transition: .5s;
+    -moz-transition: .5s; /* Firefox 4 */
+    -webkit-transition: .5s; /* Safari and Chrome */
+    -o-transition: .5s; /* Opera */
 }
-
+.nav-right li.active a {
+    color: #D80000;
+}
+.nav-right li.active a:hover {
+    text-shadow: 3px 3px 0px #000000, 5px 5px 0px #FFFFFF;
+    transition: .5s;
+    -moz-transition: .5s; /* Firefox 4 */
+    -webkit-transition: .5s; /* Safari and Chrome */
+    -o-transition: .5s; /* Opera */
+}
 
 /* -----------------------------------------
    Front Page
@@ -200,13 +213,37 @@ div#beer {
     font-weight: 800;
     color: #b90d0d;
 }
-#beer li {
-    color: #000033;
-}
 #beer ul, #beer li {
     list-style-type: none;
 }
-
+ul.accordion > li.active .content { 
+    background: none repeat scroll 0 0 #141414; 
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6); 
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+}
+ul.accordion > li.active .title { 
+    background: none repeat scroll 0 0 #000; 
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.9); 
+}
+#beer li { 
+    color: #fff; 
+}
+ul.accordion > li > div.title { 
+    background: none repeat scroll 0 0 #000; 
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.9); 
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+}
+ul.accordion > li.active { 
+    border-top: 1px solid #333333; 
+}
+ul.accordion {
+    border-bottom: 1px solid #333;
+}
+ul.accordion > li {
+    border-top: 1px solid #333;
+}
 
 
 /* -----------------------------------------
@@ -214,8 +251,7 @@ div#beer {
 ----------------------------------------- */
 div#menu {
     color: #F5F5F5;
-    background: url(../../img/anthillpub-menu-bg.png) center center #324a6f;
-    background-size: contain;
+    background: url(../../img/anthillpub-menu-bg.png) repeat scroll center center transparent;
     padding-bottom: 40px;
 }
 #menu h4 {
