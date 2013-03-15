@@ -12,10 +12,10 @@
 		
 		function DbConnection()	{
 			$this->server = "localhost";
-			$this->username = "root";
-			//$this->username = "tfksdevc_pubuser";
-			$this->db = "pub2";
-			$this->password = "";
+			//$this->username = "root";
+			$this->username = "tfksdevc_pubuser";
+			$this->db = "tfksdevc_pub";
+			$this->password = "911Trazom119";
 		}
 		
 		function connect () {
