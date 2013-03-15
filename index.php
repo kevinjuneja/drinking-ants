@@ -48,6 +48,7 @@
     </div>
     <div id="nav-menu" class="hide-for-small">
         <ul class="nav-right hide-for-small" data-magellan-expedition="fixed">
+            <li data-magellan-arrival="top" class="li-center"></li>
             <li data-magellan-arrival="find-us" class="li-center"><a href="#find-us">FIND US</a></li>
             <li><img src="img/anthillpub-navdivider-black.png" class="nav-divider" /></li>
             <li data-magellan-arrival="events" class="li-center"><a href="#events">EVENTS</a></li>
