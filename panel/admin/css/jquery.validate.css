@@ -26,6 +26,7 @@ input:focus, select:focus {
 
 .ErrorField {
     border-color: #D00;
+    border: 3px solid #D00;
     color: #D00;
     background: #FFFFFE;
 }

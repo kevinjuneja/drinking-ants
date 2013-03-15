@@ -42,11 +42,11 @@ $('.confirm_edit').click(function() {
 			$(tr).append("<td class=\"name\">" + name + "</td>");
 			$(tr).append("<td class=\"type\">" + type + "</td>");
 			$(tr).append("<td class=\"percentage\">" + perc + "%</td>");
-			$(tr).append("<td class=\"options\"><img src=\"media/images/editIcon.png\" alt=\"Edit\" class=\"edit_icon\" />");
+			$(tr).append("<td class=\"options\"><img src=\"media/images/editIcon.png\" alt=\"Edit\" class=\"edit_icon\" /></td>");
 			//$(tr).append("<img src=\"media/images/editIcon.png\" alt=\"Edit\" class=\"edit_icon\" />");
 
 			if (type != "Tap") {
-				$(tr).append("<img src=\"media/images/deleteIcon.png\" alt=\"Delete\" class=\"delete_icon\" />");
+				$(tr+" td.options").append("<img src=\"media/images/deleteIcon.png\" alt=\"Delete\" class=\"delete_icon\" />");
 			}
 
 			$(tr).append("</td>");

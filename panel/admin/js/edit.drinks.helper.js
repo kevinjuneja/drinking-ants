@@ -70,10 +70,11 @@ function deleteDrink()
 			data: 'id=' + id,
 			success: function(data) {
 				curRow.remove();
+				$("#delete_popup").bPopup().close();
 			}
 		});
 
-		$("#delete_popup").bPopup().close();
+		
 	});
 	
 	$(".cancel_delete").on("click", function(e)
@@ -100,7 +101,7 @@ function addDrink()
 		$("#brewerField").validate(
 		{
             expression: "if (VAL) return true; else return false;",
-            message: "Please enter the Required field"
+           // message: "Please enter the Required field"
         });
         $("#brewerField").val("");
         
@@ -108,7 +109,7 @@ function addDrink()
         $("#nameField").validate(
 		{
             expression: "if (VAL) return true; else return false;",
-            message: "Please enter the Required field"
+           // message: "Please enter the Required field"
         });
         $("#nameField").val("");
         
@@ -117,7 +118,7 @@ function addDrink()
         $("#editSelection").validate(
         {
             expression: "if (VAL != '0') return true; else return false;",
-            message: "Please make a selection"
+          //  message: "Please make a selection"
         });
       
         
@@ -131,7 +132,7 @@ function addDrink()
         $("#percentageField").validate(
 		{
             expression: "if (VAL) return true; else return false;",
-            message: "Please enter the Required field"
+         //   message: "Please enter the Required field"
         });
         
         $("#percentageField").val("");
@@ -192,7 +193,7 @@ function editDrink()
 		$("#brewerField").validate(
 		{
             expression: "if (VAL) return true; else return false;",
-            message: "Please enter the Required field"
+           // message: "Please enter the Required field"
         });
         $("#brewerField").val(curBrewer);
         
@@ -200,14 +201,14 @@ function editDrink()
         $("#nameField").validate(
 		{
             expression: "if (VAL) return true; else return false;",
-            message: "Please enter the Required field"
+          //  message: "Please enter the Required field"
         });
         $("#nameField").val(curName);
         
         $("#editSelection").validate(
         {
             expression: "if (VAL != '0') return true; else return false;",
-            message: "Please make a selection"
+          //  message: "Please make a selection"
         });
         $("#typeField").val(curType);
 
@@ -219,7 +220,7 @@ function editDrink()
         $("#percentageField").validate(
 		{
             expression: "if (VAL) return true; else return false;",
-            message: "Please enter the Required field"
+            //message: "Please enter the Required field"
         });
         $("#percentageField").val(curPerc);
       	

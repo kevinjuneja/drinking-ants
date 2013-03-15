@@ -52,7 +52,7 @@
 					<button id="bottle_link" class="filter">Bottle</a>
 					<button id="wine_link" class="filter">Wine</a>
 					<button id="home"><a style="text-decoration:none" href="home.php">Home</a>
-					<button id="current_page_link">View Current Page</a>
+					<button id="current_page_link"><a style="text-decoration:none" href="../../index.php#beer">View Current Page</a>
 				</div>
 			</div>
 	    	<table cellspacing="0" id="drinks_table" class="tablesorter"> 
@@ -185,15 +185,15 @@
 			<div class="form_container">
 				<form class="edit_form" action="" method="post">
 					<div id="idField"></div>
-					<input type="text" name="brewerField" id="brewerField" value=""/>
-					<input type="text" name="nameField" id="nameField" value=""/>
+					<input type="text" name="brewerField" id="brewerField" placeholder="Brewer/Vinter" value=""/>
+					<input type="text" name="nameField" id="nameField" placeholder="Name" value=""/>
 					<select name="typeField" id="typeField">
 	                                <option value="0">Make a Selection</option>
 	                                <option value="Tap">Tap</option>
 	                                <option value="Bottle">Bottle</option>
 	                                <option value="Wine">Wine</option>
 	                </select>
-					<input type="text" name="percentageField" id="percentageField" value=""/>
+					<input type="text" name="percentageField" id="percentageField" placeholder="0.00" value=""/>
 					<div class="confirm_edit confirm_button">Save</div>
 					<div class="confirm_add confirm_button">Add</div>
 					<div class="cancel_edit cancel_button">Cancel</div>

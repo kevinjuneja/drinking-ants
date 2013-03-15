@@ -38,7 +38,7 @@
     			Click a button below to view and edit its content.
     			<br/>
     			<a href="editDrinks.php" class="drinks button">Drinks</a>
-    			<a href="#" class="drinks_page button">View Website</a>
+    			<a href="../../index.php#beer" class="drinks_page button">View Website</a>
     			<a href="#" class="events button">Events</a>
     			<a href="#" class="events_page button">View Website</a>
     			<a href="#" class="menu button">Menu</a>
@@ -48,12 +48,12 @@
     			<a href="#" class="contact button">Contact Information</a>
     			<a href="#" class="contact_page button">View Website</a>
     		</div>
-    		<div class="type">
+    		<!--<div class="type">
     			Click a button below to edit an item's type.
     			<br/>
     			<a href="#" class="drink_type button">Edit Drink Types</a>
     			<a href="#" class="food_type button">Edit Food Types</a>
-    		</div>
+    		</div>-->
     	</div>
     </body>
 </html>

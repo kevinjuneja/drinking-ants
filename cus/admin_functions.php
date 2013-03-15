@@ -72,8 +72,8 @@ class AdminFunctions {
 		$row = $this->runner->getRow();
 		$id = (int)$row[0] + 1;
 
-		$query = "INSERT INTO alcohol (alc_id, name, maker, alcohol_content, type_code) " .
-		"VALUES($id,'$name', '$brewer', $alcohol_content, 3)";
+		$query = "INSERT INTO alcohol (name, maker, alcohol_content, type_code) " .
+		"VALUES('$name', '$brewer', $alcohol_content, 3)";
 		 return $this->runner->queryRunner($query);
 	}
 
@@ -83,9 +83,8 @@ class AdminFunctions {
 		if ($id > 30) {
 			$this->runner->queryRunner($query);
 
-			//$this->runner->queryRunner("SET SQL_SAFE_UPDATES = 0");
-			//$this->runner->queryRunner("ALTER TABLE alcohol AUTO_INCREMENT = 1");
-			//$this->runner->queryRunner("UPDATE alcohol SET alc_id = @count := @count + 1");
+			//$this->runner->queryRunner("ALTER TABLE alcohol DROP COLUMN alc_id");
+			//$this->runner->queryRunner("alter table alcohol add alc_id integer primary key Auto_increment")
 		}
 		return FALSE;
 

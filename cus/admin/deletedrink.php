@@ -10,6 +10,9 @@
 		
 		$admin->deleteDrink($id);
 		
+		$admin->kill_connection();
+
+		unset($_POST['id']);
 	}
 	else {
 		echo "Post was not successful";
