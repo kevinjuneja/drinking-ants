@@ -42,8 +42,8 @@
             <h4 class="front-page-header">If you've seen a commercial for it, we don't have it</h4>
         </div>
     </div>
-    <div id="front-page-details" class="show-for-large-up">
-        <p id="address">UC Irvine C215 Student Center &bull; <a href="http://goo.gl/maps/Wkf9S" title="See us on the map!">4200 Campus Drive, Irvine, CA 92614</a> &bull; (949) 824-3050</p>
+    <div id="front-page-details" class="hide-for-small">
+        <p id="address">UC Irvine C215 Student Center<br/><a href="http://goo.gl/maps/Wkf9S" title="See us on the map!">4200 Campus Drive, Irvine, CA 92614</a><br/>(949) 824-3050</p>
         <p id="hours">M-W: 11am-Midnight &bull; Th-F: 11am-1am &bull; Sat: 7pm-1am<br/>Happy Hour M-F: 4pm-7pm</p>
     </div>
     <div id="nav-menu" class="hide-for-small">
