@@ -85,10 +85,25 @@ $('.confirm_add').click(function() {
 		data: 'brewer='+brewer+'&name='+name+'&type='+type+'&perc='+perc ,
 		success: function(data) {
 			
-			var count = $("tbody tr").length;
-			count = count + 1;
+			
+			var max = 0;
+			
+			$('.drinkitem').each(function() {
+ 			
+  				var check = $(this).attr('id');
+  				check = parseInt(check);
+  				//alert(check);
+  				if(check > max){
+					 max = check;
+					// alert(max);
+				}
+			});
+			
+			//alert("max id is: " + max);
+
+			var count = max + 1;
 			//$(tr).empty();
-			$(tr).append("<tr id=\"" + count + "\">");
+			$(tr).append("<tr class=\"drinkitem\" id=\"" + count + "\">");
 			$("tr#" + count).append("<td class=\"id\">" + count + "</td>");
 			$("tr#" + count).append("<td class=\"brewer\">" + brewer + "</td>");
 			$("tr#" + count).append("<td class=\"name\">" + name + "</td>");

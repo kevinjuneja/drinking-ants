@@ -52,13 +52,15 @@ class AdminFunctions {
 		$brewer = $this->cleanUp($brewer);
 		$alcohol_content = $this->cleanUp($alcohol_content);
 
-		$this->runner->queryRunner("SELECT COUNT(alc_id) FROM alcohol");
-
+		$max_q = "SELECT MAX(alc_id) FROM alcohol";
+		$this->runner->queryRunner($max_q);
 		$row = $this->runner->getRow();
-		$id = (int)$row[0] + 1;
+		$id = $row[0];
+		$id = $id + 1;
 
 		$query = "INSERT INTO alcohol (alc_id, name, maker, alcohol_content, type_code) " .
-		"VALUES($id,'$name', '$brewer', $alcohol_content, 2)";
+		"VALUES($id, '$name', '$brewer', $alcohol_content, 2)";
+		 
 		 return $this->runner->queryRunner($query);
 	}
 
@@ -67,13 +69,14 @@ class AdminFunctions {
 		$brewer = $this->cleanUp($brewer);
 		$alcohol_content = $this->cleanUp($alcohol_content);
 
-		$this->runner->queryRunner("SELECT COUNT(alc_id) FROM alcohol");
-
+		$max_q = "SELECT MAX(alc_id) FROM alcohol";
+		$this->runner->queryRunner($max_q);
 		$row = $this->runner->getRow();
-		$id = (int)$row[0] + 1;
+		$id = $row[0];
+		$id = $id + 1;
 
-		$query = "INSERT INTO alcohol (name, maker, alcohol_content, type_code) " .
-		"VALUES('$name', '$brewer', $alcohol_content, 3)";
+		$query = "INSERT INTO alcohol (alc_id, name, maker, alcohol_content, type_code) " .
+		"VALUES($id, '$name', '$brewer', $alcohol_content, 3)";
 		 return $this->runner->queryRunner($query);
 	}
 

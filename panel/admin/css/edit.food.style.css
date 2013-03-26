@@ -70,10 +70,15 @@ body
     top: 10px;
 }
 
+.filter_links
+{
+	padding: 0 15px;
+}
+
 #current_page_link
 {
 	position:relative;
-	left: 705px;
+	left: 345px;
 	margin: 15px;
 }
 
@@ -278,69 +283,45 @@ tbody tr:hover .edit_icon, tbody tr:hover .delete_icon
 	left: 10px;
 }
 
-#titleField, #linkField, #dateBeginField, #dateEndField, #timeField, #descriptionField
+#titleField, #typeField, #burgerField, #priceField, #descriptionField, .checkbox_description
 {
 	position:absolute;
 }
 
 #titleField
 {
-	width: 130px;
+	width: 180px;
 	left: 30px;	
 }
 
-#linkField
+#typeField
 {
-	max-width: 110px;
-	left: 180px;
+	max-width: 130px;
+	left: 230px;
+	
+	margin-top: 2px;
 }
 
-#dateBeginField
+#burgerField
 {
 	max-width: 70px;
-	left: 310px;
+	left: 365px;
+	
+	margin-top: 5px;
 }
 
-#ui-datepicker-div
+.checkbox_description
 {
-	background-color: white;
+	max-width: 100px;
+	left: 380px;
+	
+	margin-top: 4px;
 }
 
-.ui-datepicker-calendar
-{
-	border: 1px solid black;
-}
-
-.ui-icon-circle-triangle-w, .ui-icon-circle-triangle-e
-{
-	cursor: pointer;
-}
-
-.ui-icon-circle-triangle-w:hover
-{
-	text-decoration: underline;
-}
-
-.ui-icon-circle-triangle-e
-{
-	float: right;
-}
-
-.ui-icon-circle-triangle-e:hover
-{
-	text-decoration: underline;
-}
-
-#dateEndField
+#priceField
 {
 	max-width: 70px;
-	left: 400px;
-}
-
-#timeField
-{
-	max-width: 50px;
-	left: 490px;
+	left: 470px;
 }
 
 #descriptionField

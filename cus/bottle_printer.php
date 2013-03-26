@@ -107,7 +107,7 @@
 				}
 
 
-				echo "<tr id=\"" . $id . "\">";
+				echo "<tr class=\"drinkitem\" id=\"" . $id . "\">";
 				echo "<td class=\"id\">" . $id . "</td>";
 				echo "<td class=\"brewer\">" . $brewery . "</td>";
 				echo "<td class=\"name\">" . $beername . "</td>";

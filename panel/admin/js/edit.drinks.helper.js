@@ -216,6 +216,12 @@ function editDrink()
         	$("#typeField").empty();
         	$("#typeField").append("<option value=\"Tap\">Tap</option>");
         }
+        else {
+        	$("#typeField").empty();
+        	$("#typeField").append("<option value=\"0\">Make a Selection</option>");
+        	$("#typeField").append("<option value=\"Bottle\">Bottle</option>");
+        	$("#typeField").append("<option value=\"Wine\">Wine</option>");
+        }
         
         $("#percentageField").validate(
 		{

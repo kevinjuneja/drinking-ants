@@ -4,7 +4,7 @@ function createTable()
 	{ 
         headers: 
         { 
-            7: 
+            6: 
             {  
                 sorter: false 
             }
@@ -13,7 +13,30 @@ function createTable()
     
 }
 
-function deleteEvent()
+function filterByType()
+{
+	$(".filter").click(function()
+    {	
+    	$("tr").show();
+    	
+    	var filter = ($(this).text().trim());
+
+    	$("tr td.type").each(function()
+    	{
+        	if ($(this).text().trim() != filter)
+        	{	
+            	$(this).parent().hide();
+            }
+            
+            if (filter == "All")
+            {
+   	       		$("tr").show();
+   	       	}
+        });
+    });  
+}
+
+function deleteFood()
 {
 	var curRow; 
 
@@ -39,14 +62,13 @@ function deleteEvent()
 
 }
 
-function editEvent()
+function editFood()
 {
 	var curRow;
 	var curTitle;
-	var curLink;
-	var curDateBegin;
-	var curDateEnd;
-	var curTimeInfo;
+	var curType;
+	var curBurgerItem;
+	var curPrice;
 	var curDescription;
 
 	$(".edit_icon").on("click", function(e)
@@ -55,10 +77,9 @@ function editEvent()
 		curRow = $(this).parent().closest("tr");
 		curId = curRow.find("td.id").text();
 		curTitle = curRow.find("td.title").text();
-		curLink = curRow.find("td.link").text();
-		curDateBegin = curRow.find("td.date_begin").text();
-		curDateEnd = curRow.find("td.date_end").text();
-		curTimeInfo = curRow.find("td.time_info").text();
+		curType = curRow.find("td.type").text();
+		curBurgerItem = curRow.find("td.burger").text();
+		curPrice = curRow.find("td.price").text();
 		curDescription = curRow.find("td.description p").text();
 		curPos = curRow.offset();
 
@@ -83,36 +104,23 @@ function editEvent()
             expression: "if (VAL) return true; else return false;",
         });
         $("#titleField").val(curTitle);
+          
+        $("#typeField").validate(
+        {
+            expression: "if (VAL != '0') return true; else return false;",
+        });
+        $("#typeField").val(curType);
         
+        if (curBurgerItem === "true")
+        {
+	        $("#burgerField").prop("checked", true);
+        }
         
-        $("#linkField").validate(
+        $("#priceField").validate(
 		{
             expression: "if (VAL) return true; else return false;",
         });
-        $("#linkField").val(curLink);
-        
-        $( "#dateBeginField" ).datepicker();
-        
-        $("#dateBeginField").validate(
-		{
-            expression: "if (!isValidDate(parseInt(VAL.split('/')[2]), parseInt(VAL.split('/')[0]), parseInt(VAL.split('/')[1]))) return false; else return true;",
-        });
-        $("#dateBeginField").val(curDateBegin);
-        
-        $( "#dateEndField" ).datepicker();
-        
-        $("#dateEndField").validate(
-		{
-            expression: "if (!isValidDate(parseInt(VAL.split('/')[2]), parseInt(VAL.split('/')[0]), parseInt(VAL.split('/')[1]))) return false; else return true;",
-        });
-        $("#dateEndField").val(curDateEnd);
-        
-        
-        $("#timeField").validate(
-		{
-            expression: "if (VAL) return true; else return false;",
-        });
-        $("#timeField").val(curTimeInfo);
+        $("#priceField").val(curPrice);
         
         
         $("#descriptionField").validate(
@@ -145,8 +153,9 @@ function editEvent()
 function myReadyFunction()
 {
 	createTable();
-    deleteEvent();
-    editEvent();
+	filterByType();
+    deleteFood();
+    editFood();
 }
 
 $(document).ready(
