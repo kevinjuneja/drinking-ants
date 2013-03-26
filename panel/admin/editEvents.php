@@ -1,3 +1,8 @@
+<?php
+
+	include_once '../../cus/eventprinter.php';
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -28,7 +33,7 @@
 			    	<tr>
 			    		<th>#</th> 
 				    	<th>Title</th> 
-				    	<th>Link</th> 
+				    	<!--<th>Link</th>--> 
 				    	<th>Date Begin</th> 
 				    	<th>Date End</th>
 				    	<th>Time Info</th>
@@ -37,7 +42,14 @@
 				    </tr> 
 				</thead> 
 				<tbody> 
-					<tr>
+					<?php
+						$events = new EventPrinter();
+
+						$events->printEventAdmin();
+
+					?>
+
+					<!--<tr>
 						<td class="id">1</td>  
 						<td class="title">Religion Plays Anthill</td>  
 						<td class="link">www.google.com/</td> 
@@ -85,7 +97,7 @@
 							<img src="media/images/editIcon.png" alt="Edit" class="edit_icon">
 							<img src="media/images/deleteIcon.png" alt="Delete" class="delete_icon">
 						</td>
-					</tr>
+					</tr>-->
 					
 				</tbody> 
 			</table>	
@@ -103,7 +115,7 @@
 				<form class="edit_form" action="" method="post">
 					<div id="idField"></div>
 					<input type="text" name="titleField" id="titleField" value=""/>
-					<input type="text" name="linkField" id="linkField" value=""/>
+					<!--<input type="text" name="linkField" id="linkField" value=""/>-->
 					<input type="text" name="dateBeginField" id="dateBeginField" value=""/>
 					<input type="text" name="dateEndField" id="dateEndField" value=""/>
 					<input type="text" name="timeField" id="timeField" value=""/>

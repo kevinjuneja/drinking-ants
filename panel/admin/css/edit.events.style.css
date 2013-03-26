@@ -289,16 +289,16 @@ tbody tr:hover .edit_icon, tbody tr:hover .delete_icon
 	left: 30px;	
 }
 
-#linkField
+/*#linkField
 {
 	max-width: 110px;
 	left: 180px;
-}
+}*/
 
 #dateBeginField
 {
 	max-width: 70px;
-	left: 310px;
+	left: 200px;
 }
 
 #ui-datepicker-div
@@ -334,13 +334,13 @@ tbody tr:hover .edit_icon, tbody tr:hover .delete_icon
 #dateEndField
 {
 	max-width: 70px;
-	left: 400px;
+	left: 310px;
 }
 
 #timeField
 {
-	max-width: 50px;
-	left: 490px;
+	max-width: 90px;
+	left: 420px;
 }
 
 #descriptionField

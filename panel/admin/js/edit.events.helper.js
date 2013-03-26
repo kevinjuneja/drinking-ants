@@ -55,7 +55,7 @@ function editEvent()
 		curRow = $(this).parent().closest("tr");
 		curId = curRow.find("td.id").text();
 		curTitle = curRow.find("td.title").text();
-		curLink = curRow.find("td.link").text();
+		//curLink = curRow.find("td.link").text();
 		curDateBegin = curRow.find("td.date_begin").text();
 		curDateEnd = curRow.find("td.date_end").text();
 		curTimeInfo = curRow.find("td.time_info").text();
@@ -85,11 +85,11 @@ function editEvent()
         $("#titleField").val(curTitle);
         
         
-        $("#linkField").validate(
+       /* $("#linkField").validate(
 		{
             expression: "if (VAL) return true; else return false;",
         });
-        $("#linkField").val(curLink);
+        $("#linkField").val(curLink); */
         
         $( "#dateBeginField" ).datepicker();
         
