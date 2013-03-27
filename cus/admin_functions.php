@@ -115,18 +115,42 @@ class AdminFunctions {
 	function addEvent($title, $description, $startdate, $enddate, $time) {
 		$title = $this->cleanUp($title);
 		$description = $this->cleanUp($description);
-		//$date = $this->cleanUp($date);
 		$sDate = $startdate;
 		$eDate = $enddate;
 		$time = $this->cleanUp($time);
 
-		if (is_null($eDate) || $eDate == "" || $eDate == 0 || $eDate == '0000-00-00') {
+		if (is_null($eDate) || $eDate == "" || $eDate == 0 || $eDate == '0000-00-00' 
+			|| $eDate == $sDate) {
 			$eDate == NULL;
 		}
 
 
 		$query = "INSERT INTO event (title, description, startdate, enddate, time) " . 
 		"VALUES('$title', '$description', '$sDate', '$eDate', '$time')";
+
+		return $this->runner->queryRunner($query);
+	}
+
+	function updateEvent($id, $title, $desc, $startdate, $enddate, $time) {
+		$title = $this->cleanUp($title);
+		$desc = $this->cleanUp($desc);
+		$sDate = $startdate;
+		$eDate = $enddate;
+		$time = $this->cleanUp($time);
+
+		if (is_null($eDate) || $eDate == "" || $eDate == 0 || $eDate == '0000-00-00' 
+			|| $eDate == $sDate) 
+		{
+			$eDate == NULL;
+		}
+
+		$query = "UPDATE event SET title = '$title', description = '$desc', startdate = '$sDate', enddate = '$eDate', time = '$time' WHERE e_id = $id";
+
+		return $this->runner->queryRunner($query);
+	}
+
+	function deleteEvent($id) {
+		$query = "DELETE FROM event WHERE e_id = $id";
 
 		return $this->runner->queryRunner($query);
 	}

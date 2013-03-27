@@ -43,6 +43,7 @@
 				
 				$title = $this->queryRunner->removeEscapeChars($row[1]);
 				$desc = $this->queryRunner->removeEscapeChars($row[2]);
+				$oldFormsDate = $row[3];
 				$startDate = $this->dateFormatter($row[3]);
 				$endDate = $row[4];
 				$time = $this->queryRunner->removeEscapeChars($row[5]);
@@ -50,7 +51,7 @@
 				echo "<div class=\"event-container\">";
 				echo "<p class=\"date\">";
 
-				if(!is_null($endDate) && $endDate != "0000-00-00") {
+				if(!is_null($endDate) && $endDate != "0000-00-00" && $oldFormsDate != $endDate) {
 					echo "<span class=\"event-date\">" . trim($startDate) . "-" . 
 					trim($this->dateFormatter($endDate)) . "</span>";
 				}
@@ -72,7 +73,7 @@
 		}
 
 		function printEventAdmin() {
-			$query = "SELECT e_id, title, description, startdate, enddate, time FROM event ORDER BY startdate LIMIT 10";
+			$query = "SELECT e_id, title, description, startdate, enddate, time FROM event ORDER BY startdate";
 
 			$this->queryRunner->queryRunner($query);
 
@@ -85,7 +86,7 @@
 				$endDate = $row[4];
 				$time = $this->queryRunner->removeEscapeChars($row[5]);
 
-				echo "<tr>";
+				echo "<tr id=\"" . $id . "\">";
 				echo "<td class=\"id\">" . $id . "</td>";
 				echo "<td class=\"title\">" . $title . "</td>";
 				echo "<td class=\"date_begin\">" . trim($startDate) . "</td>";

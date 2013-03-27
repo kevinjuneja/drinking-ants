@@ -8,6 +8,7 @@ function LoadMyJs(scriptName) {
 }
 
 
+
 function editDrinkAjax()
 {
 

@@ -28,12 +28,26 @@ function deleteEvent()
 	
 	$(".confirm_delete").on("click", function(e)
 	{
-		curRow.remove();
-		$("#delete_popup").bPopup().close();
+		
+		var id = curRow.find("td.id").text();
+		
+		alert("id= " + id);
+		$.ajax( {
+			type: 'POST',
+			url: '../../cus/admin/deleteEvent.php',
+			data: 'id=' + id,
+			success: function(data) {
+				curRow.remove();
+				$('#delete_popup').bPopup().close();
+			}
+		});
+
+	//	$("#delete_popup").bPopup().close();
 	});
 	
 	$(".cancel_delete").on("click", function(e)
 	{
+
 		$("#delete_popup").bPopup().close();
 	});
 
@@ -112,6 +126,7 @@ function editEvent()
 		{
             expression: "if (VAL) return true; else return false;",
         });
+        
         $("#timeField").val(curTimeInfo);
         
         

@@ -1,6 +1,20 @@
 <?php
+	session_start();
+	include_once '../../cus/variables.php';
 
-	include_once '../../cus/eventprinter.php';
+	if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == TRUE) {
+
+
+        
+       // echo "success";
+    }
+    else {
+       // echo "Session is not set";
+        header(sprintf("Location: %s", $index));
+        exit;
+    }
+
+    include_once '../../cus/eventprinter.php';
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -19,6 +33,7 @@
         <script src="js/jquery.blockUI.js" type="text/javascript"></script>
         <script src="js/jquery.bpopup.min.js" type="text/javascript"></script>
         <script src="js/edit.events.helper.js" type="text/javascript"></script>
+        <script src="js/ajax.event.js" type="text/javascript"></script>
     </head>
     <body>
 	    <div class="edit_container">
@@ -125,7 +140,7 @@
 				</form>
 			</div>
 			<div id="description_popup">
-				<a class="b-close">x<a/>
+				<a class="b-close">x</a>
 				<h3>Description</h3>
 				<p>description</p>
 				<div class="confirm_description confirm_button">Okay</div>
