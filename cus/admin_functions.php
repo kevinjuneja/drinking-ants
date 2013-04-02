@@ -119,14 +119,20 @@ class AdminFunctions {
 		$eDate = $enddate;
 		$time = $this->cleanUp($time);
 
+		$max_q = "SELECT MAX(e_id) FROM event";
+		$this->runner->queryRunner($max_q);
+		$row = $this->runner->getRow();
+		$id = $row[0];
+		$id = $id + 1;
+
 		if (is_null($eDate) || $eDate == "" || $eDate == 0 || $eDate == '0000-00-00' 
 			|| $eDate == $sDate) {
 			$eDate == NULL;
 		}
 
 
-		$query = "INSERT INTO event (title, description, startdate, enddate, time) " . 
-		"VALUES('$title', '$description', '$sDate', '$eDate', '$time')";
+		$query = "INSERT INTO event (e_id, title, description, startdate, enddate, time) " . 
+		"VALUES($id,'$title', '$description', '$sDate', '$eDate', '$time')";
 
 		return $this->runner->queryRunner($query);
 	}

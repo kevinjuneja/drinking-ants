@@ -1,3 +1,11 @@
+function LoadMyJs(scriptName) {
+	var docHeadObj = document.getElementsByTagName("head")[0];
+	var dynamicScript = document.createElement("script");
+	dynamicScript.type = "text/javascript";
+	dynamicScript.src = scriptName;
+	docHeadObj.appendChild(dynamicScript);
+}
+
 function createTable()
 { 
 	$("#drinks_table").tablesorter(
@@ -52,6 +60,76 @@ function deleteEvent()
 	});
 
 }
+
+
+function addEvent() 
+{
+
+	$(".addnew").on("click", function(e)
+	{
+		$(".edit_form").bPopup(
+			{
+				modalClose: false,
+				follow: [false, false],
+				positionStyle: 'absolute'
+			});
+
+		$("#idField").html("");
+
+		$("#titleField").validate(
+		{
+            expression: "if (VAL) return true; else return false;",
+           // message: "Please enter the Required field"
+        });
+        $("#titleField").val("");
+        
+        
+        $( "#dateBeginField" ).datepicker();
+        
+        $("#dateBeginField").validate(
+		{
+          //  expression: "if (!isValidDate(parseInt(VAL.split('/')[2]), parseInt(VAL.split('/')[0]), parseInt(VAL.split('/')[1]))) return false; else return true;",
+        });
+        
+        $("#dateBeginField").val("00/00/0000");
+        
+        $( "#dateEndField" ).datepicker();
+        
+        $("#dateEndField").validate(
+		{
+           // expression: "if (!isValidDate(parseInt(VAL.split('/')[2]), parseInt(VAL.split('/')[0]), parseInt(VAL.split('/')[1]))) return false; else return true;",
+        });
+        
+        $("#dateEndField").val("00/00/0000");
+
+        $("#timeField").validate(
+		{
+            expression: "if (VAL) return true; else return false;",
+        });
+        
+        $("#timeField").val("");
+        
+        
+        $("#descriptionField").validate(
+		{
+            expression: "if (VAL) return true; else return false;",
+        });
+        
+        $("#descriptionField").val("");
+
+        $(".confirm_edit").remove();
+      	$(".confirm_add").remove();
+      	$(".edit_form").append("<div class=\"confirm_add confirm_button\">Add</div>");
+      	
+      	LoadMyJs('js/ajax.event.js');
+	});
+
+	$(".cancel_edit").on("click", function(e)
+	{
+		$(".edit_form").bPopup().close();
+	});
+}
+
 
 function editEvent()
 {
@@ -135,6 +213,12 @@ function editEvent()
             expression: "if (VAL) return true; else return false;",
         });
         $("#descriptionField").val(curDescription);
+
+        $(".confirm_edit").remove();
+      	$(".confirm_add").remove();
+      	$(".edit_form").append("<div class=\"confirm_edit confirm_button\">Save</div>");
+      	
+      	LoadMyJs('js/ajax.event.js');
 	});
 	
 	$(".description span").click(function()
@@ -161,6 +245,7 @@ function myReadyFunction()
 {
 	createTable();
     deleteEvent();
+    addEvent();
     editEvent();
 }
 

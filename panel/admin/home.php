@@ -39,8 +39,8 @@
     			<br/>
     			<a href="editDrinks.php" class="drinks button">Drinks</a>
     			<a href="../../index.php#beer" class="drinks_page button">View Website</a>
-    			<a href="#" class="events button">Events</a>
-    			<a href="#" class="events_page button">View Website</a>
+    			<a href="editEvents.php" class="events button">Events</a>
+    			<a href="../../index.php#events" class="events_page button">View Website</a>
     			<a href="#" class="menu button">Menu</a>
     			<a href="#" class="menu_page button">View Website</a>
     			<a href="#" class="about_us button">About Us (Press)</a>

@@ -150,7 +150,7 @@
 
 			while($row = $this->queryRunner->getRow()) {
 				$name = $this->queryRunner->removeEscapeChars($row[1]);
-				$description = $row[2];
+				$description = $this->queryRunner->removeEscapeChars($row[2]);
 				$price = $row[3];
 
 				echo "<li>";
@@ -169,6 +169,34 @@
 			echo "</ul>";
 
 			$this->queryRunner->disconnect();
+		}
+
+		function printForAdmin() {
+			$query = "SELECT m_id, name, description, price, type_code FROM menu";
+
+			$typeCodeRunner = new Query();
+
+			$this->queryRunner->queryRunner($query);
+
+			while ($row = $this->queryRunner->getRow()) {
+				$id = $row[0];
+				$name = $this->queryRunner->removeEscapeChars($row[1]);
+				$description = $this->queryRunner->removeEscapeChars($row[2]);
+				$price = $row[3];
+				$type_code = $row[4];
+
+				$typeCodeRunner->queryRunner("SELECT code FROM type WHERE type_id = $type_code");
+				$trow = $typeCodeRunner->getRow();
+
+				$type = $trow[0];
+				
+				echo "<td class=\"id\">" . $id . "</td>";
+				echo "<td class=\"title\">" . $name . "</td>";
+
+				if ($type_code == 7) {
+					
+				}
+			}
 		}
  	};
 ?>

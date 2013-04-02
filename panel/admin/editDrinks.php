@@ -11,7 +11,7 @@
     }
     else {
        // echo "Session is not set";
-        header(sprintf("Location: %s", $index));
+        header(sprintf("Location: %s", "index.php"));
         exit;
     }
 

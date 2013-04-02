@@ -1,4 +1,4 @@
-<?php
+ <?php
 	
 	include_once 'query.php';
 
@@ -35,7 +35,7 @@
 
 		function printEvent() {
 
-			$query = "SELECT e_id, title, description, startdate, enddate, time FROM event ORDER BY startdate LIMIT 10";
+			$query = "SELECT e_id, title, description, startdate, enddate, time FROM event ORDER BY startdate DESC LIMIT 10";
 
 			$this->queryRunner->queryRunner($query);
 
@@ -73,7 +73,7 @@
 		}
 
 		function printEventAdmin() {
-			$query = "SELECT e_id, title, description, startdate, enddate, time FROM event ORDER BY startdate";
+			$query = "SELECT e_id, title, description, startdate, enddate, time FROM event ORDER BY startdate DESC";
 
 			$this->queryRunner->queryRunner($query);
 
@@ -86,7 +86,7 @@
 				$endDate = $row[4];
 				$time = $this->queryRunner->removeEscapeChars($row[5]);
 
-				echo "<tr id=\"" . $id . "\">";
+				echo "<tr class=\"eventitem\" id=\"" . $id . "\">";
 				echo "<td class=\"id\">" . $id . "</td>";
 				echo "<td class=\"title\">" . $title . "</td>";
 				echo "<td class=\"date_begin\">" . trim($startDate) . "</td>";
