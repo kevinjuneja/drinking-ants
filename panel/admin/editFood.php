@@ -1,3 +1,7 @@
+<?php
+	include_once '../../cus/menuPrinter.php';
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -25,8 +29,8 @@
 					Show:
 					<button id="all_link" class="filter">All</a>
 					<button id="appetizer_link" class="filter">Appetizers</a>
-					<button id="saladsoup_link" class="filter">Salad & Soups</a>
-					<button id="grill_link" class="filter">From the Grill</a>
+					<button id="saladsoup_link" class="filter">Salads & Soups</a>
+					<button id="grill_link" class="filter">From the Grille</a>
 					<button id="drink_link" class="filter">Drinks</a>
 					<button id="current_page_link">View Current Page</a>
 				</div>
@@ -44,7 +48,13 @@
 				    </tr> 
 				</thead> 
 				<tbody> 
-					<tr>
+
+					<?php
+						$printer = new MenuPrinter();
+
+						$printer->printForAdmin();
+					?>
+					<!--<tr>
 						<td class="id">1</td>  
 						<td class="title">Hummus & Pita</td>   
 						<td class="type">Appetizers</td> 
@@ -103,7 +113,7 @@
 							<img src="media/images/editIcon.png" alt="Edit" class="edit_icon">
 							<img src="media/images/deleteIcon.png" alt="Delete" class="delete_icon">
 						</td>				
-					</tr>
+					</tr>-->
 				</tbody> 
 			</table>	
 			<div id="addnew_button" class="addnew button">+ Add New</div>

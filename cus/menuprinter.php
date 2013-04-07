@@ -179,6 +179,7 @@
 			$this->queryRunner->queryRunner($query);
 
 			while ($row = $this->queryRunner->getRow()) {
+				
 				$id = $row[0];
 				$name = $this->queryRunner->removeEscapeChars($row[1]);
 				$description = $this->queryRunner->removeEscapeChars($row[2]);
@@ -189,13 +190,24 @@
 				$trow = $typeCodeRunner->getRow();
 
 				$type = $trow[0];
-				
+				echo "<tr>";
 				echo "<td class=\"id\">" . $id . "</td>";
 				echo "<td class=\"title\">" . $name . "</td>";
-
+				echo "<td class=\"type\">" . $type . "</td>";
 				if ($type_code == 7) {
-					
+					echo "<td class=\"burger\">true</td>";
 				}
+				else {
+					echo "<td class=\"burger\">false</td>";
+				}
+				echo "<td class=\"price\">" . $price . "</td>";
+
+				echo "<td class=\"description\"><span>View Description</span>" .
+				"<p class=\"description_detail\">" . $description ."</p></td>";
+
+				echo "<td class=\"options\"><img src=\"media/images/editIcon.png\" alt=\"Edit\" class=\"edit_icon\">" .
+				"<img src=\"media/images/deleteIcon.png\" alt=\"Delete\" class=\"delete_icon\"></td>";
+				echo "</tr>";
 			}
 		}
  	};
